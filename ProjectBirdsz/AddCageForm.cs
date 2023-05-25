@@ -16,16 +16,12 @@ namespace ProjectBirdsz
             InitializeComponent();
             string projectDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             ExcelFilePath = Path.Combine(projectDirectory, "cages.xlsx");
-
+            
             dataGridView = dataGridView1;
             dataGridView.CellDoubleClick += dataGridView1_CellDoubleClick;
         }
 
 
-        private void CagesForm_Load(object sender, EventArgs e)
-        {
-            LoadCagesFromExcel();
-        }
 
 
         private void LoadCagesFromExcel()
@@ -221,7 +217,7 @@ namespace ProjectBirdsz
 
         private void AddCageForm_Load(object sender, EventArgs e)
         {
-
+            LoadCagesFromExcel();
         }
 
         private void EditCageBtn_Click(object sender, EventArgs e)
@@ -255,7 +251,7 @@ namespace ProjectBirdsz
 
             dataGridView.Rows.Clear();
             LoadCagesFromExcel();
-            
+
         }
     }
 }

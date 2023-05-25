@@ -151,7 +151,7 @@ namespace ProjectBirdsz
             this.Height,
             this.Width,
             this.Material});
-            this.dataGridView1.Location = new System.Drawing.Point(72, 192);
+            this.dataGridView1.Location = new System.Drawing.Point(72, 141);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(543, 278);
             this.dataGridView1.TabIndex = 11;

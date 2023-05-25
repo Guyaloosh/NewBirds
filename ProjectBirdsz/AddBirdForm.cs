@@ -21,9 +21,32 @@ namespace ProjectBirdsz
             string projectDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             ExcelFilePath = Path.Combine(projectDirectory, "birds.xlsx");
             dataGridView = dataGridView1;
-
+            AddButtonColumn(); // Add the button column
+            LoadBirdsFromExcel();
             dataGridView.CellDoubleClick += dataGridView1_CellDoubleClick;
 
+
+        }
+
+        private void AddButtonColumn()
+        {
+            // Remove existing button column if any
+            foreach (DataGridViewColumn column in dataGridView.Columns)
+            {
+                if (column is DataGridViewButtonColumn && column.Name == "AddChickColumn")
+                {
+                    dataGridView.Columns.Remove(column);
+                    break;
+                }
+            }
+
+            // Add the button column to the DataGridView
+            DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+            buttonColumn.HeaderText = "Add Chick";
+            buttonColumn.Name = "AddChickColumn";
+            buttonColumn.Text = "Add Chick";
+            buttonColumn.UseColumnTextForButtonValue = true;
+            dataGridView.Columns.Add(buttonColumn);
         }
 
         private void BirdForm_Load(object sender, EventArgs e)
@@ -66,7 +89,7 @@ namespace ProjectBirdsz
                 }
                 dataGridView.Rows.Add(row);
             }
-
+            AddButtonColumn();
             // Clean up Excel objects
             workbook.Close();
             excelApp.Quit();
@@ -97,6 +120,7 @@ namespace ProjectBirdsz
                 dataGridView.Rows.Clear();
                 LoadBirdsFromExcel();
                 ClearInputFields();
+                AddButtonColumn();
             }
             else
             {
@@ -174,6 +198,7 @@ namespace ProjectBirdsz
         {
             dataGridView.Rows.Clear();
             LoadBirdsFromExcel();
+            AddButtonColumn();
         }
 
      
@@ -262,6 +287,41 @@ namespace ProjectBirdsz
             MainMenuForm obj = new MainMenuForm();
             this.Hide();
             obj.Show();
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView.Columns["AddChickColumn"].Index)
+            {
+                // Button cell clicked for the Add Chick action
+                DataGridViewRow selectedRow = dataGridView.Rows[e.RowIndex];
+
+                // Extract values from the selected row
+                string serialBird = Convert.ToString(selectedRow.Cells[0].Value);
+                string strain = Convert.ToString(selectedRow.Cells[1].Value);
+                string subSpecies = Convert.ToString(selectedRow.Cells[2].Value);
+                string CageNumber= Convert.ToString(selectedRow.Cells[5].Value);
+
+                // Set the text box values
+                txtFatherSerialNumber.Text = serialBird;
+                txtStrain.Text = strain;
+                txtSubSpecies.Text = subSpecies;
+                txtCageNumber.Text = CageNumber;
+
+                // Clear the other text box values
+                ClearInputFieldsForChick();
+
+                MessageBox.Show("Add Chick action triggered for row " + (e.RowIndex + 1));
+            }
+        }
+
+        private void ClearInputFieldsForChick()
+        {
+            // Clear all text boxes except for the ones already populated
+            txtSerialBirds.Text = string.Empty;
+            txtDateOfBird.Text = string.Empty;
+            txtGender.Text = string.Empty;
+            txtMotherSerialNumber.Text = string.Empty;
         }
     }
 }

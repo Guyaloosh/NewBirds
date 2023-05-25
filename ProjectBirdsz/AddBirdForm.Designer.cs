@@ -51,12 +51,12 @@ namespace ProjectBirdsz
             this.EditBirdBtn = new System.Windows.Forms.Button();
             this.BackBtn = new System.Windows.Forms.Button();
             this.SerialBirds = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CageNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FatherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StrainBird = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubSpecies = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateOfBird = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CageNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FatherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -161,7 +161,7 @@ namespace ProjectBirdsz
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Location = new System.Drawing.Point(1278, 400);
+            this.label5.Location = new System.Drawing.Point(1281, 400);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
             this.label5.TabIndex = 12;
@@ -213,17 +213,18 @@ namespace ProjectBirdsz
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.SerialBirds,
-            this.Gender,
-            this.CageNumber,
-            this.FatherSerialNumber,
             this.StrainBird,
             this.SubSpecies,
             this.DateOfBird,
+            this.Gender,
+            this.CageNumber,
+            this.FatherSerialNumber,
             this.MotherSerialNumber});
             this.dataGridView1.Location = new System.Drawing.Point(77, 184);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(894, 515);
+            this.dataGridView1.Size = new System.Drawing.Size(992, 515);
             this.dataGridView1.TabIndex = 17;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // AllBirdsBtn
@@ -262,21 +263,6 @@ namespace ProjectBirdsz
             this.SerialBirds.Name = "SerialBirds";
             this.SerialBirds.Width = 120;
             // 
-            // Gender
-            // 
-            this.Gender.HeaderText = "Gender";
-            this.Gender.Name = "Gender";
-            // 
-            // CageNumber
-            // 
-            this.CageNumber.HeaderText = "CageNumber";
-            this.CageNumber.Name = "CageNumber";
-            // 
-            // FatherSerialNumber
-            // 
-            this.FatherSerialNumber.HeaderText = "FatherSerialNumber";
-            this.FatherSerialNumber.Name = "FatherSerialNumber";
-            // 
             // StrainBird
             // 
             this.StrainBird.HeaderText = "Strain";
@@ -292,6 +278,21 @@ namespace ProjectBirdsz
             this.DateOfBird.FillWeight = 110F;
             this.DateOfBird.HeaderText = "DateOfBird";
             this.DateOfBird.Name = "DateOfBird";
+            // 
+            // Gender
+            // 
+            this.Gender.HeaderText = "Gender";
+            this.Gender.Name = "Gender";
+            // 
+            // CageNumber
+            // 
+            this.CageNumber.HeaderText = "CageNumber";
+            this.CageNumber.Name = "CageNumber";
+            // 
+            // FatherSerialNumber
+            // 
+            this.FatherSerialNumber.HeaderText = "FatherSerialNumber";
+            this.FatherSerialNumber.Name = "FatherSerialNumber";
             // 
             // MotherSerialNumber
             // 
@@ -357,12 +358,12 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Button EditBirdBtn;
         private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialBirds;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CageNumber;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FatherSerialNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn StrainBird;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubSpecies;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateOfBird;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Gender;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CageNumber;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FatherSerialNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotherSerialNumber;
     }
 }
