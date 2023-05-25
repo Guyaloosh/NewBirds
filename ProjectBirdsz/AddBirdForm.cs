@@ -2,8 +2,8 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Linq;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 
 namespace ProjectBirdsz
@@ -107,11 +107,35 @@ namespace ProjectBirdsz
             string SubSpecies = txtSubSpecies.Text;
             string DateOfBird = txtDateOfBird.Text;
             string Gender = txtGender.Text;
-            string CageNumber =txtCageNumber.Text;
+            string CageNumber = txtCageNumber.Text;
             string FatherSerialNumber = txtFatherSerialNumber.Text;
             string MotherSerialNumber = txtMotherSerialNumber.Text;
 
-            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, DateOfBird, Gender, CageNumber, FatherSerialNumber,MotherSerialNumber);
+            if (!ValidateSerialNumber(SerialNumber))
+            {
+                MessageBox.Show("Invalid serial number. Please enter digits only.");
+                return;
+            }
+
+            if (!ValidateSpecies(Strain))
+            {
+                MessageBox.Show("Invalid strain. Please enter letters only.");
+                return;
+            }
+
+            if (!ValidateSubspecies(SubSpecies))
+            {
+                MessageBox.Show("Invalid subspecies. Please enter letters only.");
+                return;
+            }
+
+            if (!ValidateCageNumber(CageNumber))
+            {
+                MessageBox.Show("Invalid Cage Number. Please enter letters and digits only.");
+                return;
+            }
+
+            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, DateOfBird, Gender, CageNumber, FatherSerialNumber, MotherSerialNumber);
 
             if (success)
             {
@@ -322,6 +346,35 @@ namespace ProjectBirdsz
             txtDateOfBird.Text = string.Empty;
             txtGender.Text = string.Empty;
             txtMotherSerialNumber.Text = string.Empty;
+        }
+
+        private void txtSerialBirds_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private bool ValidateSerialNumber(string serialNumber)
+        {
+            // Serial number should contain only digits
+            return Regex.IsMatch(serialNumber, @"^\d+$");
+        }
+
+        private bool ValidateSpecies(string species)
+        {
+            // Species should contain only letters
+            return Regex.IsMatch(species, @"^[A-Za-z]+$");
+        }
+
+        private bool ValidateSubspecies(string subspecies)
+        {
+            // Subspecies should contain only letters
+            return Regex.IsMatch(subspecies, @"^[A-Za-z]+$");
+        }
+
+        private bool ValidateCageNumber(string cageNumber)
+        {
+            // Cage number should contain only letters and numbers
+            return Regex.IsMatch(cageNumber, @"^[A-Za-z0-9]+$");
         }
     }
 }

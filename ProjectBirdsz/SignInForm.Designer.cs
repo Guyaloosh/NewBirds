@@ -35,6 +35,7 @@ namespace ProjectBirdsz
             this.Password = new System.Windows.Forms.Label();
             this.btnSignIn = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtUsername
@@ -54,18 +55,22 @@ namespace ProjectBirdsz
             // UserName
             // 
             this.UserName.AutoSize = true;
-            this.UserName.Location = new System.Drawing.Point(304, 146);
+            this.UserName.BackColor = System.Drawing.Color.Transparent;
+            this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UserName.Location = new System.Drawing.Point(270, 139);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(60, 13);
+            this.UserName.Size = new System.Drawing.Size(105, 22);
             this.UserName.TabIndex = 2;
             this.UserName.Text = "User Name";
             // 
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(311, 187);
+            this.Password.BackColor = System.Drawing.Color.Transparent;
+            this.Password.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Password.Location = new System.Drawing.Point(277, 180);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(53, 13);
+            this.Password.Size = new System.Drawing.Size(94, 22);
             this.Password.TabIndex = 3;
             this.Password.Text = "Password";
             // 
@@ -89,11 +94,23 @@ namespace ProjectBirdsz
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(344, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(128, 41);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Sign in";
+            // 
             // SignInForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.btnSignIn);
             this.Controls.Add(this.Password);
@@ -101,6 +118,7 @@ namespace ProjectBirdsz
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Name = "SignInForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -115,6 +133,7 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Label Password;
         private System.Windows.Forms.Button btnSignIn;
         private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.Label label1;
     }
 }
 

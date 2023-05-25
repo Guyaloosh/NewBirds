@@ -49,40 +49,42 @@ namespace ProjectBirdsz
             this.AllCagesBtn = new System.Windows.Forms.Button();
             this.btnSaveCage = new System.Windows.Forms.Button();
             this.EditCageBtn = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCageNumber
             // 
-            this.txtCageNumber.Location = new System.Drawing.Point(904, 192);
+            this.txtCageNumber.Location = new System.Drawing.Point(181, 162);
             this.txtCageNumber.Name = "txtCageNumber";
             this.txtCageNumber.Size = new System.Drawing.Size(100, 20);
             this.txtCageNumber.TabIndex = 0;
             // 
             // txtlength
             // 
-            this.txtlength.Location = new System.Drawing.Point(904, 235);
+            this.txtlength.Location = new System.Drawing.Point(181, 205);
             this.txtlength.Name = "txtlength";
             this.txtlength.Size = new System.Drawing.Size(100, 20);
             this.txtlength.TabIndex = 1;
             // 
             // txtheight
             // 
-            this.txtheight.Location = new System.Drawing.Point(904, 279);
+            this.txtheight.Location = new System.Drawing.Point(181, 249);
             this.txtheight.Name = "txtheight";
             this.txtheight.Size = new System.Drawing.Size(100, 20);
             this.txtheight.TabIndex = 2;
             // 
             // txtwidth
             // 
-            this.txtwidth.Location = new System.Drawing.Point(904, 327);
+            this.txtwidth.Location = new System.Drawing.Point(181, 297);
             this.txtwidth.Name = "txtwidth";
             this.txtwidth.Size = new System.Drawing.Size(100, 20);
             this.txtwidth.TabIndex = 3;
             // 
             // txtMaterial
             // 
-            this.txtMaterial.Location = new System.Drawing.Point(904, 371);
+            this.txtMaterial.Location = new System.Drawing.Point(181, 341);
             this.txtMaterial.Name = "txtMaterial";
             this.txtMaterial.Size = new System.Drawing.Size(100, 20);
             this.txtMaterial.TabIndex = 4;
@@ -90,51 +92,61 @@ namespace ProjectBirdsz
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(817, 195);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label1.Location = new System.Drawing.Point(42, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.Size = new System.Drawing.Size(128, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cage Number";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(853, 242);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label2.Location = new System.Drawing.Point(78, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(61, 22);
             this.label2.TabIndex = 6;
             this.label2.Text = "length";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(853, 282);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label3.Location = new System.Drawing.Point(78, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 13);
+            this.label3.Size = new System.Drawing.Size(61, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "height";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(857, 327);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label4.Location = new System.Drawing.Point(82, 290);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(32, 13);
+            this.label4.Size = new System.Drawing.Size(53, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "width";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(853, 378);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label5.Location = new System.Drawing.Point(78, 341);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 13);
+            this.label5.Size = new System.Drawing.Size(75, 22);
             this.label5.TabIndex = 9;
             this.label5.Text = "Material";
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(1064, 509);
+            this.BackBtn.Location = new System.Drawing.Point(863, 492);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(93, 32);
             this.BackBtn.TabIndex = 10;
@@ -151,9 +163,9 @@ namespace ProjectBirdsz
             this.Height,
             this.Width,
             this.Material});
-            this.dataGridView1.Location = new System.Drawing.Point(72, 141);
+            this.dataGridView1.Location = new System.Drawing.Point(413, 128);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(543, 278);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 233);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -184,7 +196,7 @@ namespace ProjectBirdsz
             // 
             // AllCagesBtn
             // 
-            this.AllCagesBtn.Location = new System.Drawing.Point(72, 492);
+            this.AllCagesBtn.Location = new System.Drawing.Point(859, 379);
             this.AllCagesBtn.Name = "AllCagesBtn";
             this.AllCagesBtn.Size = new System.Drawing.Size(97, 37);
             this.AllCagesBtn.TabIndex = 19;
@@ -194,7 +206,7 @@ namespace ProjectBirdsz
             // 
             // btnSaveCage
             // 
-            this.btnSaveCage.Location = new System.Drawing.Point(749, 439);
+            this.btnSaveCage.Location = new System.Drawing.Point(65, 450);
             this.btnSaveCage.Name = "btnSaveCage";
             this.btnSaveCage.Size = new System.Drawing.Size(108, 40);
             this.btnSaveCage.TabIndex = 20;
@@ -204,7 +216,7 @@ namespace ProjectBirdsz
             // 
             // EditCageBtn
             // 
-            this.EditCageBtn.Location = new System.Drawing.Point(904, 439);
+            this.EditCageBtn.Location = new System.Drawing.Point(220, 450);
             this.EditCageBtn.Name = "EditCageBtn";
             this.EditCageBtn.Size = new System.Drawing.Size(101, 40);
             this.EditCageBtn.TabIndex = 21;
@@ -212,11 +224,35 @@ namespace ProjectBirdsz
             this.EditCageBtn.UseVisualStyleBackColor = true;
             this.EditCageBtn.Click += new System.EventHandler(this.EditCageBtn_Click);
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.label6.Location = new System.Drawing.Point(545, 48);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(168, 37);
+            this.label6.TabIndex = 22;
+            this.label6.Text = "Add Cage";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("MV Boli", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(122, 90);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(115, 28);
+            this.label7.TabIndex = 23;
+            this.label7.Text = "Details : ";
+            // 
             // AddCageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 568);
+            this.ClientSize = new System.Drawing.Size(1074, 551);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.EditCageBtn);
             this.Controls.Add(this.btnSaveCage);
             this.Controls.Add(this.AllCagesBtn);
@@ -233,6 +269,7 @@ namespace ProjectBirdsz
             this.Controls.Add(this.txtlength);
             this.Controls.Add(this.txtCageNumber);
             this.Name = "AddCageForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCageForm";
             this.Load += new System.EventHandler(this.AddCageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -263,5 +300,7 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Button AllCagesBtn;
         private System.Windows.Forms.Button btnSaveCage;
         private System.Windows.Forms.Button EditCageBtn;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
     }
 }

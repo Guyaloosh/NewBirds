@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace ProjectBirdsz

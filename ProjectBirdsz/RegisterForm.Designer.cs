@@ -29,6 +29,7 @@ namespace ProjectBirdsz
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
             this.Password = new System.Windows.Forms.Label();
             this.UserName = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
@@ -37,36 +38,41 @@ namespace ProjectBirdsz
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.IDuserName = new System.Windows.Forms.Label();
             this.BackBtn = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Password
             // 
             this.Password.AutoSize = true;
-            this.Password.Location = new System.Drawing.Point(285, 98);
+            this.Password.BackColor = System.Drawing.Color.Transparent;
+            this.Password.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Password.Location = new System.Drawing.Point(238, 188);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(53, 13);
+            this.Password.Size = new System.Drawing.Size(103, 22);
             this.Password.TabIndex = 7;
             this.Password.Text = "Password";
             // 
             // UserName
             // 
             this.UserName.AutoSize = true;
-            this.UserName.Location = new System.Drawing.Point(285, 60);
+            this.UserName.BackColor = System.Drawing.Color.Transparent;
+            this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UserName.Location = new System.Drawing.Point(238, 150);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(60, 13);
+            this.UserName.Size = new System.Drawing.Size(110, 22);
             this.UserName.TabIndex = 6;
             this.UserName.Text = "User Name";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(362, 98);
+            this.txtPassword.Location = new System.Drawing.Point(359, 195);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
             this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(362, 53);
+            this.txtUsername.Location = new System.Drawing.Point(359, 150);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(166, 20);
             this.txtUsername.TabIndex = 4;
@@ -74,9 +80,9 @@ namespace ProjectBirdsz
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(327, 280);
+            this.btnRegister.Location = new System.Drawing.Point(357, 324);
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(212, 90);
+            this.btnRegister.Size = new System.Drawing.Size(167, 53);
             this.btnRegister.TabIndex = 8;
             this.btnRegister.Text = "Register";
             this.btnRegister.UseVisualStyleBackColor = true;
@@ -84,7 +90,7 @@ namespace ProjectBirdsz
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(362, 143);
+            this.IdTextBox.Location = new System.Drawing.Point(359, 240);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(165, 20);
             this.IdTextBox.TabIndex = 9;
@@ -92,15 +98,17 @@ namespace ProjectBirdsz
             // IDuserName
             // 
             this.IDuserName.AutoSize = true;
-            this.IDuserName.Location = new System.Drawing.Point(322, 150);
+            this.IDuserName.BackColor = System.Drawing.Color.Transparent;
+            this.IDuserName.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.IDuserName.Location = new System.Drawing.Point(275, 240);
             this.IDuserName.Name = "IDuserName";
-            this.IDuserName.Size = new System.Drawing.Size(16, 13);
+            this.IDuserName.Size = new System.Drawing.Size(27, 22);
             this.IDuserName.TabIndex = 10;
             this.IDuserName.Text = "Id";
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(642, 394);
+            this.BackBtn.Location = new System.Drawing.Point(683, 403);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 23);
             this.BackBtn.TabIndex = 11;
@@ -108,11 +116,24 @@ namespace ProjectBirdsz
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(326, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(183, 41);
+            this.label1.TabIndex = 12;
+            this.label1.Text = "Register : ";
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.IDuserName);
             this.Controls.Add(this.IdTextBox);
@@ -122,6 +143,7 @@ namespace ProjectBirdsz
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -138,5 +160,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.Label IDuserName;
         private System.Windows.Forms.Button BackBtn;
+        private System.Windows.Forms.Label label1;
     }
 }
