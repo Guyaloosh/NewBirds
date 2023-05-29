@@ -37,8 +37,9 @@ namespace ProjectBirdsz
             this.btnRegister = new System.Windows.Forms.Button();
             this.IdTextBox = new System.Windows.Forms.TextBox();
             this.IDuserName = new System.Windows.Forms.Label();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // Password
@@ -46,7 +47,7 @@ namespace ProjectBirdsz
             this.Password.AutoSize = true;
             this.Password.BackColor = System.Drawing.Color.Transparent;
             this.Password.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Password.Location = new System.Drawing.Point(415, 223);
+            this.Password.Location = new System.Drawing.Point(347, 207);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(94, 22);
             this.Password.TabIndex = 7;
@@ -57,7 +58,7 @@ namespace ProjectBirdsz
             this.UserName.AutoSize = true;
             this.UserName.BackColor = System.Drawing.Color.Transparent;
             this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.UserName.Location = new System.Drawing.Point(415, 185);
+            this.UserName.Location = new System.Drawing.Point(347, 169);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(105, 22);
             this.UserName.TabIndex = 6;
@@ -65,14 +66,14 @@ namespace ProjectBirdsz
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(536, 230);
+            this.txtPassword.Location = new System.Drawing.Point(468, 214);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
             this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(536, 185);
+            this.txtUsername.Location = new System.Drawing.Point(468, 169);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(166, 20);
             this.txtUsername.TabIndex = 4;
@@ -80,7 +81,7 @@ namespace ProjectBirdsz
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(456, 376);
+            this.btnRegister.Location = new System.Drawing.Point(468, 396);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(167, 53);
             this.btnRegister.TabIndex = 8;
@@ -90,7 +91,7 @@ namespace ProjectBirdsz
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(536, 275);
+            this.IdTextBox.Location = new System.Drawing.Point(468, 259);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(165, 20);
             this.IdTextBox.TabIndex = 9;
@@ -100,21 +101,11 @@ namespace ProjectBirdsz
             this.IDuserName.AutoSize = true;
             this.IDuserName.BackColor = System.Drawing.Color.Transparent;
             this.IDuserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.IDuserName.Location = new System.Drawing.Point(452, 275);
+            this.IDuserName.Location = new System.Drawing.Point(384, 259);
             this.IDuserName.Name = "IDuserName";
             this.IDuserName.Size = new System.Drawing.Size(27, 22);
             this.IDuserName.TabIndex = 10;
             this.IDuserName.Text = "Id";
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(971, 479);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(75, 23);
-            this.BackBtn.TabIndex = 11;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // label1
             // 
@@ -127,6 +118,18 @@ namespace ProjectBirdsz
             this.label1.TabIndex = 12;
             this.label1.Text = "Register : ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(921, 446);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -135,8 +138,8 @@ namespace ProjectBirdsz
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1092, 526);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.IDuserName);
             this.Controls.Add(this.IdTextBox);
             this.Controls.Add(this.btnRegister);
@@ -148,6 +151,7 @@ namespace ProjectBirdsz
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,7 +166,7 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TextBox IdTextBox;
         private System.Windows.Forms.Label IDuserName;
-        private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

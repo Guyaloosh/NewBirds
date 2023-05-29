@@ -155,12 +155,7 @@ namespace ProjectBirdsz
                 MessageBox.Show("An error occurred while converting range to DataTable: " + ex.Message);
             }
         }
-        private void Backbuttom_Click(object sender, EventArgs e)
-        {
-            MainMenuForm obj = new MainMenuForm();
-            this.Hide();
-            obj.Show();
-        }
+  
 
         private void btnClean_Click(object sender, EventArgs e)
         {
@@ -169,6 +164,13 @@ namespace ProjectBirdsz
             dataGridView.Rows.Clear();
             dataGridView.Columns.Clear();
            
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
         }
     }
 }

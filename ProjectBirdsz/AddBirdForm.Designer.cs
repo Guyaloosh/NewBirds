@@ -56,14 +56,15 @@ namespace ProjectBirdsz
             this.EditBirdBtn = new System.Windows.Forms.Button();
             this.AddBirdLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.ClearBtn = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSerialBirds
@@ -323,16 +324,6 @@ namespace ProjectBirdsz
             this.label2.TabIndex = 22;
             this.label2.Text = "Details : ";
             // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(974, 604);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(77, 34);
-            this.BackBtn.TabIndex = 20;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -390,7 +381,7 @@ namespace ProjectBirdsz
             // DateOfBirth
             // 
             this.DateOfBirth.Location = new System.Drawing.Point(235, 306);
-            this.DateOfBirth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DateOfBirth.Margin = new System.Windows.Forms.Padding(2);
             this.DateOfBirth.Name = "DateOfBirth";
             this.DateOfBirth.Size = new System.Drawing.Size(144, 20);
             this.DateOfBirth.TabIndex = 27;
@@ -398,7 +389,7 @@ namespace ProjectBirdsz
             // ClearBtn
             // 
             this.ClearBtn.Location = new System.Drawing.Point(200, 521);
-            this.ClearBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ClearBtn.Margin = new System.Windows.Forms.Padding(2);
             this.ClearBtn.Name = "ClearBtn";
             this.ClearBtn.Size = new System.Drawing.Size(98, 22);
             this.ClearBtn.TabIndex = 28;
@@ -407,12 +398,25 @@ namespace ProjectBirdsz
             this.ClearBtn.Visible = false;
             this.ClearBtn.Click += new System.EventHandler(this.ClearBtn_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(939, 568);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 30;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // AddBirdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1090, 648);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.DateOfBirth);
             this.Controls.Add(this.comboBox2);
@@ -421,7 +425,6 @@ namespace ProjectBirdsz
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddBirdLabel);
-            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.EditBirdBtn);
             this.Controls.Add(this.AllBirdsBtn);
             this.Controls.Add(this.dataGridView1);
@@ -443,6 +446,7 @@ namespace ProjectBirdsz
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddBirdForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -476,12 +480,12 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DataGridViewTextBoxColumn MotherSerialNumber;
         private System.Windows.Forms.Label AddBirdLabel;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.Button ClearBtn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

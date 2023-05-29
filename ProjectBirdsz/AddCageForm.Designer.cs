@@ -39,7 +39,6 @@ namespace ProjectBirdsz
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BackBtn = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.CageNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Length = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,39 +51,37 @@ namespace ProjectBirdsz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.MaterialComboBox = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCageNumber
             // 
-            this.txtCageNumber.Location = new System.Drawing.Point(241, 199);
-            this.txtCageNumber.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCageNumber.Location = new System.Drawing.Point(181, 162);
             this.txtCageNumber.Name = "txtCageNumber";
-            this.txtCageNumber.Size = new System.Drawing.Size(132, 22);
+            this.txtCageNumber.Size = new System.Drawing.Size(100, 20);
             this.txtCageNumber.TabIndex = 0;
             // 
             // txtlength
             // 
-            this.txtlength.Location = new System.Drawing.Point(241, 252);
-            this.txtlength.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtlength.Location = new System.Drawing.Point(181, 205);
             this.txtlength.Name = "txtlength";
-            this.txtlength.Size = new System.Drawing.Size(132, 22);
+            this.txtlength.Size = new System.Drawing.Size(100, 20);
             this.txtlength.TabIndex = 1;
             // 
             // txtheight
             // 
-            this.txtheight.Location = new System.Drawing.Point(241, 306);
-            this.txtheight.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtheight.Location = new System.Drawing.Point(181, 249);
             this.txtheight.Name = "txtheight";
-            this.txtheight.Size = new System.Drawing.Size(132, 22);
+            this.txtheight.Size = new System.Drawing.Size(100, 20);
             this.txtheight.TabIndex = 2;
             // 
             // txtwidth
             // 
-            this.txtwidth.Location = new System.Drawing.Point(241, 366);
-            this.txtwidth.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtwidth.Location = new System.Drawing.Point(181, 297);
             this.txtwidth.Name = "txtwidth";
-            this.txtwidth.Size = new System.Drawing.Size(132, 22);
+            this.txtwidth.Size = new System.Drawing.Size(100, 20);
             this.txtwidth.TabIndex = 3;
             // 
             // label1
@@ -93,10 +90,9 @@ namespace ProjectBirdsz
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(56, 194);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(42, 158);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(162, 27);
+            this.label1.Size = new System.Drawing.Size(128, 22);
             this.label1.TabIndex = 5;
             this.label1.Text = "Cage Number";
             // 
@@ -106,10 +102,9 @@ namespace ProjectBirdsz
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(104, 252);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(78, 205);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 27);
+            this.label2.Size = new System.Drawing.Size(61, 22);
             this.label2.TabIndex = 6;
             this.label2.Text = "length";
             // 
@@ -119,10 +114,9 @@ namespace ProjectBirdsz
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(104, 302);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(78, 245);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 27);
+            this.label3.Size = new System.Drawing.Size(61, 22);
             this.label3.TabIndex = 7;
             this.label3.Text = "height";
             // 
@@ -132,10 +126,9 @@ namespace ProjectBirdsz
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(109, 357);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(82, 290);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 27);
+            this.label4.Size = new System.Drawing.Size(53, 22);
             this.label4.TabIndex = 8;
             this.label4.Text = "width";
             // 
@@ -145,23 +138,11 @@ namespace ProjectBirdsz
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(104, 415);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(78, 337);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 27);
+            this.label5.Size = new System.Drawing.Size(75, 22);
             this.label5.TabIndex = 9;
             this.label5.Text = "Material";
-            // 
-            // BackBtn
-            // 
-            this.BackBtn.Location = new System.Drawing.Point(1223, 615);
-            this.BackBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.BackBtn.Name = "BackBtn";
-            this.BackBtn.Size = new System.Drawing.Size(124, 39);
-            this.BackBtn.TabIndex = 10;
-            this.BackBtn.Text = "Back";
-            this.BackBtn.UseVisualStyleBackColor = true;
-            this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
             // dataGridView1
             // 
@@ -172,11 +153,10 @@ namespace ProjectBirdsz
             this.Height,
             this.Width,
             this.Material});
-            this.dataGridView1.Location = new System.Drawing.Point(551, 158);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(413, 128);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(724, 287);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 233);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -217,10 +197,9 @@ namespace ProjectBirdsz
             // 
             // AllCagesBtn
             // 
-            this.AllCagesBtn.Location = new System.Drawing.Point(1145, 466);
-            this.AllCagesBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AllCagesBtn.Location = new System.Drawing.Point(859, 379);
             this.AllCagesBtn.Name = "AllCagesBtn";
-            this.AllCagesBtn.Size = new System.Drawing.Size(129, 46);
+            this.AllCagesBtn.Size = new System.Drawing.Size(97, 37);
             this.AllCagesBtn.TabIndex = 19;
             this.AllCagesBtn.Text = "Show cages";
             this.AllCagesBtn.UseVisualStyleBackColor = true;
@@ -228,10 +207,9 @@ namespace ProjectBirdsz
             // 
             // btnSaveCage
             // 
-            this.btnSaveCage.Location = new System.Drawing.Point(87, 554);
-            this.btnSaveCage.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSaveCage.Location = new System.Drawing.Point(65, 450);
             this.btnSaveCage.Name = "btnSaveCage";
-            this.btnSaveCage.Size = new System.Drawing.Size(144, 49);
+            this.btnSaveCage.Size = new System.Drawing.Size(108, 40);
             this.btnSaveCage.TabIndex = 20;
             this.btnSaveCage.Text = "Save Cage";
             this.btnSaveCage.UseVisualStyleBackColor = true;
@@ -239,10 +217,9 @@ namespace ProjectBirdsz
             // 
             // EditCageBtn
             // 
-            this.EditCageBtn.Location = new System.Drawing.Point(293, 554);
-            this.EditCageBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EditCageBtn.Location = new System.Drawing.Point(220, 450);
             this.EditCageBtn.Name = "EditCageBtn";
-            this.EditCageBtn.Size = new System.Drawing.Size(135, 49);
+            this.EditCageBtn.Size = new System.Drawing.Size(101, 40);
             this.EditCageBtn.TabIndex = 21;
             this.EditCageBtn.Text = "Edit Cage";
             this.EditCageBtn.UseVisualStyleBackColor = true;
@@ -254,10 +231,9 @@ namespace ProjectBirdsz
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("MV Boli", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(660, 42);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(495, 34);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(205, 52);
+            this.label6.Size = new System.Drawing.Size(164, 41);
             this.label6.TabIndex = 22;
             this.label6.Text = "Add Cage";
             // 
@@ -267,10 +243,9 @@ namespace ProjectBirdsz
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("MV Boli", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(55, 134);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(41, 109);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(145, 34);
+            this.label7.Size = new System.Drawing.Size(115, 28);
             this.label7.TabIndex = 23;
             this.label7.Text = "Details : ";
             // 
@@ -284,19 +259,33 @@ namespace ProjectBirdsz
             "Wood",
             "Plastic",
             "Metal"});
-            this.MaterialComboBox.Location = new System.Drawing.Point(241, 421);
+            this.MaterialComboBox.Location = new System.Drawing.Point(181, 342);
+            this.MaterialComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.MaterialComboBox.Name = "MaterialComboBox";
-            this.MaterialComboBox.Size = new System.Drawing.Size(132, 24);
+            this.MaterialComboBox.Size = new System.Drawing.Size(100, 21);
             this.MaterialComboBox.TabIndex = 24;
             this.MaterialComboBox.SelectedIndexChanged += new System.EventHandler(this.MaterialComboBox_SelectedIndexChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(890, 464);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 32;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // AddCageForm
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(1363, 670);
+            this.ClientSize = new System.Drawing.Size(1022, 544);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MaterialComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -304,7 +293,6 @@ namespace ProjectBirdsz
             this.Controls.Add(this.btnSaveCage);
             this.Controls.Add(this.AllCagesBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -315,12 +303,12 @@ namespace ProjectBirdsz
             this.Controls.Add(this.txtlength);
             this.Controls.Add(this.txtCageNumber);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "AddCageForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCageForm";
             this.Load += new System.EventHandler(this.AddCageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -337,7 +325,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button BackBtn;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn CageNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn Length;
@@ -350,5 +337,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox MaterialComboBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

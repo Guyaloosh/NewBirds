@@ -236,12 +236,7 @@ namespace ProjectBirdsz
             SearchCage(cageSerialNumber, material, CageNUmForBirds);
         }
 
-        private void Backbuttom_Click_1(object sender, EventArgs e)
-        {
-            MainMenuForm obj = new MainMenuForm();
-            this.Hide();
-            obj.Show();
-        }
+   
 
         private void btnClean_Click(object sender, EventArgs e)
         {
@@ -251,6 +246,13 @@ namespace ProjectBirdsz
             dataGridViewBirds.DataSource = null;
             dataGridViewBirds.Rows.Clear();
             dataGridViewBirds.Columns.Clear();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
         }
     }
 }

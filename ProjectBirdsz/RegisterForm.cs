@@ -89,13 +89,7 @@ namespace ProjectBirdsz
             }
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            SignInForm obj = new SignInForm();
-            this.Hide();
-            obj.Show();
-
-        }
+   
 
         private bool IsUsernameLegal(string username)
         {
@@ -159,6 +153,14 @@ namespace ProjectBirdsz
         private void txtUsername_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+            SignInForm obj = new SignInForm();
+            this.Hide();
+            obj.Show();
         }
     }
 }

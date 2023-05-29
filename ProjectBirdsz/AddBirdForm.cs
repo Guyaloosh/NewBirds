@@ -341,12 +341,7 @@ namespace ProjectBirdsz
             ReleaseObject(excelApp);
         }
 
-        private void BackBtn_Click(object sender, EventArgs e)
-        {
-            MainMenuForm obj = new MainMenuForm();
-            this.Hide();
-            obj.Show();
-        }
+     
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -538,6 +533,13 @@ namespace ProjectBirdsz
         {
             ClearInputFields();
             ClearBtn.Visible = false;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
         }
     }
 }

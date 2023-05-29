@@ -40,12 +40,13 @@ namespace ProjectBirdsz
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.Backbuttom = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnClean = new System.Windows.Forms.Button();
             this.txtCageNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSerialNumber
@@ -142,16 +143,6 @@ namespace ProjectBirdsz
             this.dataGridView.Size = new System.Drawing.Size(465, 185);
             this.dataGridView.TabIndex = 9;
             // 
-            // Backbuttom
-            // 
-            this.Backbuttom.Location = new System.Drawing.Point(684, 400);
-            this.Backbuttom.Name = "Backbuttom";
-            this.Backbuttom.Size = new System.Drawing.Size(75, 23);
-            this.Backbuttom.TabIndex = 10;
-            this.Backbuttom.Text = "Back";
-            this.Backbuttom.UseVisualStyleBackColor = true;
-            this.Backbuttom.Click += new System.EventHandler(this.Backbuttom_Click);
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -192,17 +183,29 @@ namespace ProjectBirdsz
             this.label6.TabIndex = 14;
             this.label6.Text = "Cage Number";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(668, 382);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // SearchBirdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.txtCageNumber);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Backbuttom);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -218,6 +221,7 @@ namespace ProjectBirdsz
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SearchBirdForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -235,10 +239,10 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button Backbuttom;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.TextBox txtCageNumber;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

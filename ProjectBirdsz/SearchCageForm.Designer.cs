@@ -32,7 +32,6 @@ namespace ProjectBirdsz
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SearchCageForm));
             this.btnClean = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.Backbuttom = new System.Windows.Forms.Button();
             this.dataGridViewCages = new System.Windows.Forms.DataGridView();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,8 +41,10 @@ namespace ProjectBirdsz
             this.dataGridViewBirds = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCages)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBirds)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClean
@@ -66,16 +67,6 @@ namespace ProjectBirdsz
             this.label5.Size = new System.Drawing.Size(209, 41);
             this.label5.TabIndex = 24;
             this.label5.Text = "Search Cage";
-            // 
-            // Backbuttom
-            // 
-            this.Backbuttom.Location = new System.Drawing.Point(775, 473);
-            this.Backbuttom.Name = "Backbuttom";
-            this.Backbuttom.Size = new System.Drawing.Size(75, 23);
-            this.Backbuttom.TabIndex = 23;
-            this.Backbuttom.Text = "Back";
-            this.Backbuttom.UseVisualStyleBackColor = true;
-            this.Backbuttom.Click += new System.EventHandler(this.Backbuttom_Click_1);
             // 
             // dataGridViewCages
             // 
@@ -163,18 +154,30 @@ namespace ProjectBirdsz
             this.label4.TabIndex = 28;
             this.label4.Text = "Birds in the cage : ";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(750, 453);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 68);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 29;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
             // SearchCageForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(862, 508);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridViewBirds);
             this.Controls.Add(this.btnClean);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.Backbuttom);
             this.Controls.Add(this.dataGridViewCages);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -187,6 +190,7 @@ namespace ProjectBirdsz
             this.Text = "SearchCageForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewCages)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBirds)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,7 +200,6 @@ namespace ProjectBirdsz
 
         private System.Windows.Forms.Button btnClean;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button Backbuttom;
         private System.Windows.Forms.DataGridView dataGridViewCages;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
@@ -206,5 +209,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DataGridView dataGridViewBirds;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

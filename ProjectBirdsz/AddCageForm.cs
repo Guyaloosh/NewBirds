@@ -276,5 +276,12 @@ namespace ProjectBirdsz
         {
             MaterialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
+        }
     }
 }
