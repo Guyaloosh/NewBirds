@@ -20,3 +20,5 @@ C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\ob
 C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\obj\Debug\ProjectBirdsz.AddCageForm.resources
 C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\obj\Debug\ProjectBirdsz.csproj.AssemblyReference.cache
 C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\obj\Debug\ProjectBirdsz.StartForm.resources
+C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\obj\Debug\ProjectBirdsz.SearchBirdForm.resources
+C:\Users\guyal\OneDrive\Desktop\FinalPROJECTbirds\ProjectBirdsz\ProjectBirdsz\obj\Debug\ProjectBirdsz.SearchCageForm.resources

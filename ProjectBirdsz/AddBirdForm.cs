@@ -6,20 +6,33 @@ using System.Windows.Forms;
 using System.Text.RegularExpressions;
 
 
+
 namespace ProjectBirdsz
 {
     public partial class AddBirdForm : Form
     {
         private string ExcelFilePath;
+        private string ExcelCagesFilePath;
         private DataGridView dataGridView;
+        private string Gender1;
+        private string BirdKind;
+        private string SubBirdKind;
+        private string birdDate;
+        DateTime thisDay = DateTime.Today.AddDays(1);
+
+
+
 
 
         public AddBirdForm()
         {
 
             InitializeComponent();
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             string projectDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             ExcelFilePath = Path.Combine(projectDirectory, "birds.xlsx");
+            ExcelCagesFilePath = Path.Combine(projectDirectory, "cages.xlsx");
             dataGridView = dataGridView1;
             AddButtonColumn(); // Add the button column
             LoadBirdsFromExcel();
@@ -88,6 +101,7 @@ namespace ProjectBirdsz
                     row.Cells.Add(cell);
                 }
                 dataGridView.Rows.Add(row);
+               
             }
             AddButtonColumn();
             // Clean up Excel objects
@@ -98,22 +112,39 @@ namespace ProjectBirdsz
             ReleaseObject(excelApp);
         }
 
-
+        bool CheckBirthDay(DateTime BirthDay)
+        {
+            if (BirthDay > thisDay)
+            {
+                return false;
+            }
+            return true;
+        }
+        
         private void btnSaveBird_Click(object sender, EventArgs e)
         {
+            
+            DateTime selectedDate = DateOfBirth.Value;
+            birdDate = selectedDate.ToString("yyyy-MM-dd");
             bool success = false;
             string SerialNumber = txtSerialBirds.Text;
-            string Strain = txtStrain.Text;
-            string SubSpecies = txtSubSpecies.Text;
-            string DateOfBird = txtDateOfBird.Text;
-            string Gender = txtGender.Text;
+            string Strain = BirdKind;
+            string SubSpecies = comboBox2.Text;
+            string Gender = Gender1;
             string CageNumber = txtCageNumber.Text;
             string FatherSerialNumber = txtFatherSerialNumber.Text;
             string MotherSerialNumber = txtMotherSerialNumber.Text;
 
+
+            if (!CheckBirthDay(selectedDate))
+            {
+                MessageBox.Show("Check date , cant be bigger then Today date");
+                return;
+            }
+
             if (!ValidateSerialNumber(SerialNumber))
             {
-                MessageBox.Show("Invalid serial number. Please enter digits only.");
+                MessageBox.Show("Invalid serial number. Please enter digits only, confirm that bird does not exist");
                 return;
             }
 
@@ -131,11 +162,11 @@ namespace ProjectBirdsz
 
             if (!ValidateCageNumber(CageNumber))
             {
-                MessageBox.Show("Invalid Cage Number. Please enter letters and digits only.");
+                MessageBox.Show("Invalid Cage Number. Please enter an existing cage number .");
                 return;
             }
 
-            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, DateOfBird, Gender, CageNumber, FatherSerialNumber, MotherSerialNumber);
+            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, birdDate, Gender, CageNumber, FatherSerialNumber, MotherSerialNumber);
 
             if (success)
             {
@@ -152,7 +183,7 @@ namespace ProjectBirdsz
             }
         }
 
-        private bool SaveBirdToExcel(string SerialNumber, string Strain, string SubSpecies, string DateOfBird, string Gender, string CageNumber, string FatherSerialNumber, string MotherSerialNumber)
+        private bool SaveBirdToExcel(string SerialNumber, string BirdKind, string SubSpecies, string DateOfBirth, string Gender1, string CageNumber, string FatherSerialNumber, string MotherSerialNumber)
         {
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
@@ -163,12 +194,12 @@ namespace ProjectBirdsz
             // Find the next available row in Excel
             int nextRow = range.Rows.Count + 1;
 
-            // Save user information to Excel
+            // Save birds information to Excel
             range.Cells[nextRow, 1].Value = SerialNumber;
-            range.Cells[nextRow, 2].Value = Strain;
+            range.Cells[nextRow, 2].Value = BirdKind;
             range.Cells[nextRow, 3].Value = SubSpecies;
-            range.Cells[nextRow, 4].Value = DateOfBird;
-            range.Cells[nextRow, 5].Value = Gender;
+            range.Cells[nextRow, 4].Value = birdDate;
+            range.Cells[nextRow, 5].Value = Gender1;
             range.Cells[nextRow, 6].Value = CageNumber;
             range.Cells[nextRow, 7].Value = FatherSerialNumber;
             range.Cells[nextRow, 8].Value = MotherSerialNumber;
@@ -209,13 +240,17 @@ namespace ProjectBirdsz
         private void ClearInputFields()
         {
             txtSerialBirds.Text = string.Empty;
-            txtStrain.Text = string.Empty;
-            txtSubSpecies.Text = string.Empty;
-            txtDateOfBird.Text = string.Empty;
-            txtGender.Text = string.Empty;
+            BirdKind = string.Empty;
+            comboBox2.Text = string.Empty;
+            DateOfBirth.Text = string.Empty;
             txtCageNumber.Text = string.Empty;
             txtFatherSerialNumber.Text = string.Empty;
             txtMotherSerialNumber.Text = string.Empty;
+            txtMotherSerialNumber.Enabled = true;
+            txtFatherSerialNumber.Enabled = true;
+            comboBox1.Enabled = true;
+            comboBox2.Enabled = true;
+            txtCageNumber.Enabled = true;
         }
 
         private void AllBirdsBtn_Click(object sender, EventArgs e)
@@ -235,10 +270,10 @@ namespace ProjectBirdsz
 
                 // Set the values of the text boxes based on the selected row
                 txtSerialBirds.Text = Convert.ToString(selectedRow.Cells[0].Value);
-                txtStrain.Text = Convert.ToString(selectedRow.Cells[1].Value);
-                txtSubSpecies.Text = Convert.ToString(selectedRow.Cells[2].Value);
-                txtDateOfBird.Text = Convert.ToString(selectedRow.Cells[3].Value);
-                txtGender.Text = Convert.ToString(selectedRow.Cells[4].Value);
+                BirdKind = Convert.ToString(selectedRow.Cells[1].Value);
+                comboBox2.Text = Convert.ToString(selectedRow.Cells[2].Value);
+                birdDate = Convert.ToString(selectedRow.Cells[3].Value);
+                Gender1 = Convert.ToString(selectedRow.Cells[4].Value);
                 txtCageNumber.Text = Convert.ToString(selectedRow.Cells[5].Value);
                 txtFatherSerialNumber.Text = Convert.ToString(selectedRow.Cells[6].Value);
                 txtMotherSerialNumber.Text = Convert.ToString(selectedRow.Cells[7].Value);
@@ -253,10 +288,10 @@ namespace ProjectBirdsz
 
                 // Update the values in the DataGridView row with the values from the text boxes
                 selectedRow.Cells[0].Value = txtSerialBirds.Text;
-                selectedRow.Cells[1].Value = txtStrain.Text;
-                selectedRow.Cells[2].Value = txtSubSpecies.Text;
-                selectedRow.Cells[3].Value = txtDateOfBird.Text;
-                selectedRow.Cells[4].Value = txtGender.Text;
+                selectedRow.Cells[1].Value = BirdKind;
+                selectedRow.Cells[2].Value = comboBox2.Text;
+                selectedRow.Cells[3].Value = birdDate;
+                selectedRow.Cells[4].Value = Gender1;
                 selectedRow.Cells[5].Value = txtCageNumber.Text;
                 selectedRow.Cells[6].Value = txtFatherSerialNumber.Text;
                 selectedRow.Cells[7].Value = txtMotherSerialNumber.Text;
@@ -317,6 +352,7 @@ namespace ProjectBirdsz
         {
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView.Columns["AddChickColumn"].Index)
             {
+                ClearBtn.Visible = true;
                 // Button cell clicked for the Add Chick action
                 DataGridViewRow selectedRow = dataGridView.Rows[e.RowIndex];
 
@@ -324,18 +360,41 @@ namespace ProjectBirdsz
                 string serialBird = Convert.ToString(selectedRow.Cells[0].Value);
                 string strain = Convert.ToString(selectedRow.Cells[1].Value);
                 string subSpecies = Convert.ToString(selectedRow.Cells[2].Value);
+                string BirdGender = Convert.ToString(selectedRow.Cells[4].Value);
                 string CageNumber= Convert.ToString(selectedRow.Cells[5].Value);
 
                 // Set the text box values
-                txtFatherSerialNumber.Text = serialBird;
-                txtStrain.Text = strain;
-                txtSubSpecies.Text = subSpecies;
+                if (BirdGender == "Male") {
+                    txtFatherSerialNumber.Text = serialBird;
+                    txtFatherSerialNumber.Enabled = false;
+                    txtMotherSerialNumber.Enabled = true;
+                    txtMotherSerialNumber.Text = "";
+                }
+                else
+                {
+               
+                    txtMotherSerialNumber.Text = serialBird;
+                    txtMotherSerialNumber.Enabled = false;
+                    txtFatherSerialNumber.Enabled = true;
+                    txtFatherSerialNumber.Text = "";
+                }
+
+
+
+
+                comboBox1.Text = strain;
+                comboBox1.Enabled = false;
+                
+                comboBox2.Text = subSpecies;
+                comboBox2.Enabled = false;
+
                 txtCageNumber.Text = CageNumber;
+                txtCageNumber.Enabled = false;
 
                 // Clear the other text box values
                 ClearInputFieldsForChick();
 
-                MessageBox.Show("Add Chick action triggered for row " + (e.RowIndex + 1));
+                MessageBox.Show("Add Chick " + (e.RowIndex + 1));
             }
         }
 
@@ -343,9 +402,9 @@ namespace ProjectBirdsz
         {
             // Clear all text boxes except for the ones already populated
             txtSerialBirds.Text = string.Empty;
-            txtDateOfBird.Text = string.Empty;
-            txtGender.Text = string.Empty;
-            txtMotherSerialNumber.Text = string.Empty;
+            birdDate = string.Empty;
+            Gender1 = string.Empty;
+            //txtMotherSerialNumber.Text = string.Empty;
         }
 
         private void txtSerialBirds_TextChanged(object sender, EventArgs e)
@@ -355,26 +414,130 @@ namespace ProjectBirdsz
 
         private bool ValidateSerialNumber(string serialNumber)
         {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
+            Excel.Worksheet worksheet = workbook.Sheets[1];
+
+            int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            bool flag = true;
+            for (int i = 2; i <= lastRow; i++)
+            {
+                Excel.Range BirdsSerial = worksheet.Cells[i, 1];
+                if (BirdsSerial.Text == serialNumber) { flag = false; }
+            }
+
+            // Clean up Excel objects
+            workbook.Close();
+            excelApp.Quit();
+            ReleaseObject(worksheet);
+            ReleaseObject(workbook);
+            ReleaseObject(excelApp);
+
             // Serial number should contain only digits
-            return Regex.IsMatch(serialNumber, @"^\d+$");
+            return Regex.IsMatch(serialNumber, @"^\d+$")&&flag;
         }
 
         private bool ValidateSpecies(string species)
         {
             // Species should contain only letters
-            return Regex.IsMatch(species, @"^[A-Za-z]+$");
+            return Regex.IsMatch(species, @"^[A-Za-z\s]+$");
         }
 
         private bool ValidateSubspecies(string subspecies)
         {
             // Subspecies should contain only letters
-            return Regex.IsMatch(subspecies, @"^[A-Za-z]+$");
+            return Regex.IsMatch(subspecies, @"^[A-Za-z\s]+$");
         }
 
         private bool ValidateCageNumber(string cageNumber)
         {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelCagesFilePath);
+            Excel.Worksheet worksheet = workbook.Sheets[1];
+            
+
+            // Get the used range of cells in the cages worksheet
+           // Excel.Range range = worksheet.UsedRange;
+            // Get the last row number
+            int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            bool flag = false;
+            for (int i = 2; i <= lastRow;i++)
+            {
+                Excel.Range Cageserial = worksheet.Cells[i, 1];
+                if(Cageserial.Text== cageNumber) { flag = true; }
+                 
+               
+            }
+            
+            
+            // Clean up Excel objects
+            workbook.Close();
+            excelApp.Quit();
+            ReleaseObject(worksheet);
+            ReleaseObject(workbook);
+            ReleaseObject(excelApp);
+
             // Cage number should contain only letters and numbers
-            return Regex.IsMatch(cageNumber, @"^[A-Za-z0-9]+$");
+            return Regex.IsMatch(cageNumber, @"^[A-Za-z0-9]+$")&&flag;
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                checkBox2.Checked = false;
+            }
+            Gender1 = "Male";
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked)
+            {
+                checkBox1.Checked = false;
+            }
+            Gender1 = "Female";
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            if (comboBox1.SelectedIndex==0){ 
+                BirdKind = "Golden Amrican";
+                comboBox2.Items.Clear();
+                comboBox2.Items.Add("Notrh America");
+                comboBox2.Items.Add("Central America");
+                comboBox2.Items.Add("South America");
+                
+            }
+            if (comboBox1.SelectedIndex == 1) {
+                BirdKind = "Golden European";
+                comboBox2.Items.Clear();
+                comboBox2.Items.Add("East Europe");
+                comboBox2.Items.Add("West Europe");
+            }
+            if (comboBox1.SelectedIndex == 2) 
+            { 
+                BirdKind = "Golden Australian";
+                comboBox2.Items.Clear();
+                comboBox2.Items.Add("Central Australia");
+                comboBox2.Items.Add("Coastal cities");
+
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void ClearBtn_Click(object sender, EventArgs e)
+        {
+            ClearInputFields();
+            ClearBtn.Visible = false;
         }
     }
 }

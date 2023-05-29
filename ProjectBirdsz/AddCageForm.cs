@@ -13,6 +13,7 @@ namespace ProjectBirdsz
         public AddCageForm()
         {
             InitializeComponent();
+            this.MaterialComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             string projectDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             ExcelFilePath = Path.Combine(projectDirectory, "cages.xlsx");
             
@@ -95,7 +96,24 @@ namespace ProjectBirdsz
             obj.Show();
         }
 
-       
+        bool CheckOnlyNumber(String Number)
+        {
+            foreach (char letter in Number)
+                if (!char.IsDigit(letter))
+                    return false;
+            if (Number == "")
+                return false;
+            return true;
+        }
+        bool CageSiral(String CageS)
+        {
+            foreach (char letter in CageS)
+                if (!char.IsLetterOrDigit(letter))
+                    return false;
+            if (CageS == "")
+                return false;
+            return true;
+        }
         private void btnSaveCage_Click(object sender, EventArgs e)
         {
             bool success = false;
@@ -103,10 +121,11 @@ namespace ProjectBirdsz
             string CageLength = txtlength.Text;
             string CageHeight = txtheight.Text;
             string CageWitdh = txtwidth.Text;
-            string CageMaterial = txtMaterial.Text;
+            string CageMaterial = MaterialComboBox.Text;
 
-            success = SaveCageToExcel(CageNumber, CageLength, CageHeight, CageWitdh, CageMaterial);
-
+            if (CageSiral(CageNumber)&& CageMaterial!="" && CheckOnlyNumber(CageLength) && CheckOnlyNumber(CageHeight) && CheckOnlyNumber(CageWitdh))
+                success = SaveCageToExcel(CageNumber, CageLength, CageHeight, CageWitdh, CageMaterial);
+ 
             if (success)
             {
                 MessageBox.Show("Registration successful!");
@@ -158,7 +177,7 @@ namespace ProjectBirdsz
             txtlength.Text = string.Empty;
             txtheight.Text = string.Empty;
             txtwidth.Text = string.Empty;
-            txtMaterial.Text = string.Empty;
+            MaterialComboBox.Text = string.Empty;
            
         }
 
@@ -176,7 +195,7 @@ namespace ProjectBirdsz
                 txtlength.Text = Convert.ToString(selectedRow.Cells[1].Value);
                 txtheight.Text = Convert.ToString(selectedRow.Cells[2].Value);
                 txtwidth.Text = Convert.ToString(selectedRow.Cells[3].Value);
-                txtMaterial.Text = Convert.ToString(selectedRow.Cells[4].Value);
+                MaterialComboBox.Text = Convert.ToString(selectedRow.Cells[4].Value);
                 
             }
         }
@@ -231,7 +250,7 @@ namespace ProjectBirdsz
                 selectedRow.Cells[1].Value = txtlength.Text;
                 selectedRow.Cells[2].Value = txtheight.Text;
                 selectedRow.Cells[3].Value = txtwidth.Text;
-                selectedRow.Cells[4].Value = txtMaterial.Text;
+                selectedRow.Cells[4].Value = MaterialComboBox.Text;
                 
 
                 // Save the changes back to the Excel file
@@ -251,6 +270,11 @@ namespace ProjectBirdsz
             dataGridView.Rows.Clear();
             LoadCagesFromExcel();
 
+        }
+
+        private void MaterialComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MaterialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
         }
     }
 }

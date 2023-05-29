@@ -125,5 +125,10 @@ namespace ProjectBirdsz
             this.Hide();
             obj.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

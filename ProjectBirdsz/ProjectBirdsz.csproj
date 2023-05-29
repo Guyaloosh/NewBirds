@@ -89,6 +89,18 @@
     <Compile Include="RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SearchBirdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchBirdForm.Designer.cs">
+      <DependentUpon>SearchBirdForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchCageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchCageForm.Designer.cs">
+      <DependentUpon>SearchCageForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="SignInForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +126,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchBirdForm.resx">
+      <DependentUpon>SearchBirdForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchCageForm.resx">
+      <DependentUpon>SearchCageForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SignInForm.resx">
       <DependentUpon>SignInForm.cs</DependentUpon>

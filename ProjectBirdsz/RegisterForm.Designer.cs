@@ -45,10 +45,10 @@ namespace ProjectBirdsz
             // 
             this.Password.AutoSize = true;
             this.Password.BackColor = System.Drawing.Color.Transparent;
-            this.Password.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.Password.Location = new System.Drawing.Point(238, 188);
+            this.Password.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Password.Location = new System.Drawing.Point(415, 223);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(103, 22);
+            this.Password.Size = new System.Drawing.Size(94, 22);
             this.Password.TabIndex = 7;
             this.Password.Text = "Password";
             // 
@@ -56,23 +56,23 @@ namespace ProjectBirdsz
             // 
             this.UserName.AutoSize = true;
             this.UserName.BackColor = System.Drawing.Color.Transparent;
-            this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.UserName.Location = new System.Drawing.Point(238, 150);
+            this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UserName.Location = new System.Drawing.Point(415, 185);
             this.UserName.Name = "UserName";
-            this.UserName.Size = new System.Drawing.Size(110, 22);
+            this.UserName.Size = new System.Drawing.Size(105, 22);
             this.UserName.TabIndex = 6;
             this.UserName.Text = "User Name";
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(359, 195);
+            this.txtPassword.Location = new System.Drawing.Point(536, 230);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(166, 20);
             this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(359, 150);
+            this.txtUsername.Location = new System.Drawing.Point(536, 185);
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(166, 20);
             this.txtUsername.TabIndex = 4;
@@ -80,7 +80,7 @@ namespace ProjectBirdsz
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(357, 324);
+            this.btnRegister.Location = new System.Drawing.Point(456, 376);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(167, 53);
             this.btnRegister.TabIndex = 8;
@@ -90,7 +90,7 @@ namespace ProjectBirdsz
             // 
             // IdTextBox
             // 
-            this.IdTextBox.Location = new System.Drawing.Point(359, 240);
+            this.IdTextBox.Location = new System.Drawing.Point(536, 275);
             this.IdTextBox.Name = "IdTextBox";
             this.IdTextBox.Size = new System.Drawing.Size(165, 20);
             this.IdTextBox.TabIndex = 9;
@@ -99,8 +99,8 @@ namespace ProjectBirdsz
             // 
             this.IDuserName.AutoSize = true;
             this.IDuserName.BackColor = System.Drawing.Color.Transparent;
-            this.IDuserName.Font = new System.Drawing.Font("Arial", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.IDuserName.Location = new System.Drawing.Point(275, 240);
+            this.IDuserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.IDuserName.Location = new System.Drawing.Point(452, 275);
             this.IDuserName.Name = "IDuserName";
             this.IDuserName.Size = new System.Drawing.Size(27, 22);
             this.IDuserName.TabIndex = 10;
@@ -108,7 +108,7 @@ namespace ProjectBirdsz
             // 
             // BackBtn
             // 
-            this.BackBtn.Location = new System.Drawing.Point(683, 403);
+            this.BackBtn.Location = new System.Drawing.Point(971, 479);
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(75, 23);
             this.BackBtn.TabIndex = 11;
@@ -121,7 +121,7 @@ namespace ProjectBirdsz
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(326, 53);
+            this.label1.Location = new System.Drawing.Point(429, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 41);
             this.label1.TabIndex = 12;
@@ -131,8 +131,10 @@ namespace ProjectBirdsz
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1092, 526);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.BackBtn);
             this.Controls.Add(this.IDuserName);
@@ -142,6 +144,7 @@ namespace ProjectBirdsz
             this.Controls.Add(this.UserName);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtUsername);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "RegisterForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
