@@ -83,6 +83,16 @@ namespace ProjectBirdsz
             int rowCount = range.Rows.Count;
             int columnCount = range.Columns.Count;
 
+            // Get the range for the entire sheet
+            Excel.Range sortRange = worksheet.Cells;
+
+            // Sort the range in ascending order
+            sortRange.Sort(
+            Key1: worksheet.Range["A1"],
+            Order1: Excel.XlSortOrder.xlAscending,
+            Orientation: Excel.XlSortOrientation.xlSortColumns
+);
+
             // Set up the DataGridView columns
             dataGridView.ColumnCount = columnCount;
             for (int c = 1; c <= columnCount; c++)
@@ -105,6 +115,7 @@ namespace ProjectBirdsz
             }
             AddButtonColumn();
             // Clean up Excel objects
+            workbook.Save();
             workbook.Close();
             excelApp.Quit();
             ReleaseObject(worksheet);
