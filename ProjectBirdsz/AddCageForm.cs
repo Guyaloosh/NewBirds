@@ -107,12 +107,32 @@ namespace ProjectBirdsz
         }
         bool CageSiral(String CageS)
         {
+            Excel.Application excelApp = new Excel.Application();
+            Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
+            Excel.Worksheet worksheet = workbook.Sheets[1];
+
+            int lastRow = worksheet.Cells.SpecialCells(Excel.XlCellType.xlCellTypeLastCell).Row;
+
+            bool flag = true;
+            for (int i = 2; i <= lastRow; i++)
+            {
+                Excel.Range CageNumber = worksheet.Cells[i, 1];
+                if (CageNumber.Text == CageS) { flag = false; }
+            }
+
+            // Clean up Excel objects
+            workbook.Close();
+            excelApp.Quit();
+            ReleaseObject(worksheet);
+            ReleaseObject(workbook);
+            ReleaseObject(excelApp);
+
             foreach (char letter in CageS)
                 if (!char.IsLetterOrDigit(letter))
                     return false;
             if (CageS == "")
                 return false;
-            return true;
+            return true&&flag;
         }
        
         private bool SaveCageToExcel(string CageNumber, string CageLength, string CageHeight, string CageWitdh, string CageMaterial)

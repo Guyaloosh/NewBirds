@@ -158,7 +158,10 @@ namespace ProjectBirdsz
             if (success)
             {
                 MessageBox.Show("Registration successful!");
-                // Perform any additional actions for successful registration
+                SignInForm obj = new SignInForm();
+                this.Hide();
+                obj.Show();
+              
             }
             else
             {
