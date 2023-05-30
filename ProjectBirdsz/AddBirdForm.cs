@@ -124,68 +124,7 @@ namespace ProjectBirdsz
             return true;
         }
         
-        private void btnSaveBird_Click(object sender, EventArgs e)
-        {
-            
-            DateTime selectedDate = DateOfBirth.Value;
-            birdDate = selectedDate.ToString("yyyy-MM-dd");
-            bool success = false;
-            string SerialNumber = txtSerialBirds.Text;
-            string Strain = BirdKind;
-            string SubSpecies = comboBox2.Text;
-            string Gender = Gender1;
-            string CageNumber = txtCageNumber.Text;
-            string FatherSerialNumber = txtFatherSerialNumber.Text;
-            string MotherSerialNumber = txtMotherSerialNumber.Text;
-
-
-            if (!CheckBirthDay(selectedDate))
-            {
-                MessageBox.Show("Check date , cant be bigger then Today date");
-                return;
-            }
-
-            if (!ValidateSerialNumber(SerialNumber))
-            {
-                MessageBox.Show("Invalid serial number. Please enter digits only, confirm that bird does not exist");
-                return;
-            }
-
-            if (!ValidateSpecies(Strain))
-            {
-                MessageBox.Show("Invalid strain. Please enter letters only.");
-                return;
-            }
-
-            if (!ValidateSubspecies(SubSpecies))
-            {
-                MessageBox.Show("Invalid subspecies. Please enter letters only.");
-                return;
-            }
-
-            if (!ValidateCageNumber(CageNumber))
-            {
-                MessageBox.Show("Invalid Cage Number. Please enter an existing cage number .");
-                return;
-            }
-
-            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, birdDate, Gender, CageNumber, FatherSerialNumber, MotherSerialNumber);
-
-            if (success)
-            {
-                MessageBox.Show("Registration successful!");
-                // Perform any additional actions for successful registration
-                dataGridView.Rows.Clear();
-                LoadBirdsFromExcel();
-                ClearInputFields();
-                AddButtonColumn();
-            }
-            else
-            {
-                MessageBox.Show("Error occurred during registration. Please try again.");
-            }
-        }
-
+      
         private bool SaveBirdToExcel(string SerialNumber, string BirdKind, string SubSpecies, string DateOfBirth, string Gender1, string CageNumber, string FatherSerialNumber, string MotherSerialNumber)
         {
             Excel.Application excelApp = new Excel.Application();
@@ -266,13 +205,6 @@ namespace ProjectBirdsz
             txtCageNumber.Enabled = true;
         }
 
-        private void AllBirdsBtn_Click(object sender, EventArgs e)
-        {
-            dataGridView.Rows.Clear();
-            LoadBirdsFromExcel();
-            AddButtonColumn();
-        }
-
      
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -293,32 +225,7 @@ namespace ProjectBirdsz
             }
         }
 
-        private void EditBirdBtn_Click(object sender, EventArgs e)
-        {
-            if (dataGridView.SelectedRows.Count == 1)
-            {
-                DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
-
-                // Update the values in the DataGridView row with the values from the text boxes
-                selectedRow.Cells[0].Value = txtSerialBirds.Text;
-                selectedRow.Cells[1].Value = BirdKind;
-                selectedRow.Cells[2].Value = comboBox2.Text;
-                selectedRow.Cells[3].Value = birdDate;
-                selectedRow.Cells[4].Value = Gender1;
-                selectedRow.Cells[5].Value = txtCageNumber.Text;
-                selectedRow.Cells[6].Value = txtFatherSerialNumber.Text;
-                selectedRow.Cells[7].Value = txtMotherSerialNumber.Text;
-
-                // Save the changes back to the Excel file
-                SaveChangesToExcel();
-
-                MessageBox.Show("Changes saved successfully!");
-            }
-            else
-            {
-                MessageBox.Show("Please select a row to edit.");
-            }
-        }
+        
 
 
         private void SaveChangesToExcel()
@@ -553,6 +460,102 @@ namespace ProjectBirdsz
             MainMenuForm obj = new MainMenuForm();
             this.Hide();
             obj.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            dataGridView.Rows.Clear();
+            LoadBirdsFromExcel();
+            AddButtonColumn();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            if (dataGridView.SelectedRows.Count == 1)
+            {
+                DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
+
+                // Update the values in the DataGridView row with the values from the text boxes
+                selectedRow.Cells[0].Value = txtSerialBirds.Text;
+                selectedRow.Cells[1].Value = BirdKind;
+                selectedRow.Cells[2].Value = comboBox2.Text;
+                selectedRow.Cells[3].Value = birdDate;
+                selectedRow.Cells[4].Value = Gender1;
+                selectedRow.Cells[5].Value = txtCageNumber.Text;
+                selectedRow.Cells[6].Value = txtFatherSerialNumber.Text;
+                selectedRow.Cells[7].Value = txtMotherSerialNumber.Text;
+
+                // Save the changes back to the Excel file
+                SaveChangesToExcel();
+
+                MessageBox.Show("Changes saved successfully!");
+            }
+            else
+            {
+                MessageBox.Show("Please select a row to edit.");
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            DateTime selectedDate = DateOfBirth.Value;
+            birdDate = selectedDate.ToString("yyyy-MM-dd");
+            bool success = false;
+            string SerialNumber = txtSerialBirds.Text;
+            string Strain = BirdKind;
+            string SubSpecies = comboBox2.Text;
+            string Gender = Gender1;
+            string CageNumber = txtCageNumber.Text;
+            string FatherSerialNumber = txtFatherSerialNumber.Text;
+            string MotherSerialNumber = txtMotherSerialNumber.Text;
+
+
+            if (!CheckBirthDay(selectedDate))
+            {
+                MessageBox.Show("Check date , cant be bigger then Today date");
+                return;
+            }
+
+            if (!ValidateSerialNumber(SerialNumber))
+            {
+                MessageBox.Show("Invalid serial number. Please enter digits only, confirm that bird does not exist");
+                return;
+            }
+
+            if (!ValidateSpecies(Strain))
+            {
+                MessageBox.Show("Invalid strain. Please enter letters only.");
+                return;
+            }
+
+            if (!ValidateSubspecies(SubSpecies))
+            {
+                MessageBox.Show("Invalid subspecies. Please enter letters only.");
+                return;
+            }
+
+            if (!ValidateCageNumber(CageNumber))
+            {
+                MessageBox.Show("Invalid Cage Number. Please enter an existing cage number .");
+                return;
+            }
+
+            success = SaveBirdToExcel(SerialNumber, Strain, SubSpecies, birdDate, Gender, CageNumber, FatherSerialNumber, MotherSerialNumber);
+
+            if (success)
+            {
+                MessageBox.Show("Registration successful!");
+                // Perform any additional actions for successful registration
+                dataGridView.Rows.Clear();
+                LoadBirdsFromExcel();
+                ClearInputFields();
+                AddButtonColumn();
+            }
+            else
+            {
+                MessageBox.Show("Error occurred during registration. Please try again.");
+            }
         }
     }
 }

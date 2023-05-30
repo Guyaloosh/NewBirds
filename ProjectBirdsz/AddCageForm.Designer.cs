@@ -45,15 +45,18 @@ namespace ProjectBirdsz
             this.Height = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AllCagesBtn = new System.Windows.Forms.Button();
-            this.btnSaveCage = new System.Windows.Forms.Button();
-            this.EditCageBtn = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.MaterialComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCageNumber
@@ -195,36 +198,6 @@ namespace ProjectBirdsz
             this.Material.Name = "Material";
             this.Material.Width = 125;
             // 
-            // AllCagesBtn
-            // 
-            this.AllCagesBtn.Location = new System.Drawing.Point(859, 379);
-            this.AllCagesBtn.Name = "AllCagesBtn";
-            this.AllCagesBtn.Size = new System.Drawing.Size(97, 37);
-            this.AllCagesBtn.TabIndex = 19;
-            this.AllCagesBtn.Text = "Show cages";
-            this.AllCagesBtn.UseVisualStyleBackColor = true;
-            this.AllCagesBtn.Click += new System.EventHandler(this.AllCagesBtn_Click);
-            // 
-            // btnSaveCage
-            // 
-            this.btnSaveCage.Location = new System.Drawing.Point(65, 450);
-            this.btnSaveCage.Name = "btnSaveCage";
-            this.btnSaveCage.Size = new System.Drawing.Size(108, 40);
-            this.btnSaveCage.TabIndex = 20;
-            this.btnSaveCage.Text = "Save Cage";
-            this.btnSaveCage.UseVisualStyleBackColor = true;
-            this.btnSaveCage.Click += new System.EventHandler(this.btnSaveCage_Click);
-            // 
-            // EditCageBtn
-            // 
-            this.EditCageBtn.Location = new System.Drawing.Point(220, 450);
-            this.EditCageBtn.Name = "EditCageBtn";
-            this.EditCageBtn.Size = new System.Drawing.Size(101, 40);
-            this.EditCageBtn.TabIndex = 21;
-            this.EditCageBtn.Text = "Edit Cage";
-            this.EditCageBtn.UseVisualStyleBackColor = true;
-            this.EditCageBtn.Click += new System.EventHandler(this.EditCageBtn_Click);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -260,7 +233,7 @@ namespace ProjectBirdsz
             "Plastic",
             "Metal"});
             this.MaterialComboBox.Location = new System.Drawing.Point(181, 342);
-            this.MaterialComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.MaterialComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.MaterialComboBox.Name = "MaterialComboBox";
             this.MaterialComboBox.Size = new System.Drawing.Size(100, 21);
             this.MaterialComboBox.TabIndex = 24;
@@ -278,6 +251,42 @@ namespace ProjectBirdsz
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(823, 367);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 33;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(224, 399);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(143, 91);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 34;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(46, 399);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(143, 91);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 35;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // AddCageForm
             // 
             this.AllowDrop = true;
@@ -285,13 +294,13 @@ namespace ProjectBirdsz
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1022, 544);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MaterialComboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.EditCageBtn);
-            this.Controls.Add(this.btnSaveCage);
-            this.Controls.Add(this.AllCagesBtn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -309,6 +318,9 @@ namespace ProjectBirdsz
             this.Load += new System.EventHandler(this.AddCageForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,12 +343,12 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DataGridViewTextBoxColumn Height;
         private System.Windows.Forms.DataGridViewTextBoxColumn Width;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material;
-        private System.Windows.Forms.Button AllCagesBtn;
-        private System.Windows.Forms.Button btnSaveCage;
-        private System.Windows.Forms.Button EditCageBtn;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox MaterialComboBox;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

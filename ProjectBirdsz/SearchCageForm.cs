@@ -31,8 +31,6 @@ namespace ProjectBirdsz
         {
             cagesDataTable.Clear();
             birdsDataTable.Clear();
-            
-            
 
             // Load the cages Excel file
             Excel.Application excelAppCages = new Excel.Application();
@@ -83,7 +81,7 @@ namespace ProjectBirdsz
 
                         // Filter the birds based on the selected cage number
                         DataView birdsDataView = new DataView(birdsDataTable);
-                        string birdsFilterExpression = $"CageNumber = '{CageNUmForBirds}'";
+                        string birdsFilterExpression = $"CageNumber LIKE '{CageNUmForBirds}'";
                         birdsDataView.RowFilter = birdsFilterExpression;
 
                         // Check if any birds match the selected cage number
@@ -92,10 +90,7 @@ namespace ProjectBirdsz
                             // Show the birds in the separate DataGridView
                             dataGridViewBirds.DataSource = birdsDataView.ToTable();
                         }
-                        else
-                        {
-                            MessageBox.Show("No birds found in the selected cage.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
+                       
                     }
 
                     // Close the birds Excel workbook and release the resources
@@ -219,7 +214,28 @@ namespace ProjectBirdsz
             }
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+   
+
+        
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            dataGridViewCages.DataSource = null;
+            dataGridViewCages.Rows.Clear();
+            dataGridViewCages.Columns.Clear();
+            dataGridViewBirds.DataSource = null;
+            dataGridViewBirds.Rows.Clear();
+            dataGridViewBirds.Columns.Clear();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             cagesDataTable.Clear();
             cagesDataTable.Columns.Clear();
@@ -234,25 +250,6 @@ namespace ProjectBirdsz
 
             // Call the method to perform the search
             SearchCage(cageSerialNumber, material, CageNUmForBirds);
-        }
-
-   
-
-        private void btnClean_Click(object sender, EventArgs e)
-        {
-            dataGridViewCages.DataSource = null;
-            dataGridViewCages.Rows.Clear();
-            dataGridViewCages.Columns.Clear();
-            dataGridViewBirds.DataSource = null;
-            dataGridViewBirds.Rows.Clear();
-            dataGridViewBirds.Columns.Clear();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            MainMenuForm obj = new MainMenuForm();
-            this.Hide();
-            obj.Show();
         }
     }
 }

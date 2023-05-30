@@ -42,7 +42,6 @@ namespace ProjectBirdsz
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.btnSaveBird = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.SerialBirds = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StrainBird = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,8 +51,6 @@ namespace ProjectBirdsz
             this.CageNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FatherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.AllBirdsBtn = new System.Windows.Forms.Button();
-            this.EditBirdBtn = new System.Windows.Forms.Button();
             this.AddBirdLabel = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -63,8 +60,14 @@ namespace ProjectBirdsz
             this.DateOfBirth = new System.Windows.Forms.DateTimePicker();
             this.ClearBtn = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSerialBirds
@@ -193,16 +196,6 @@ namespace ProjectBirdsz
             this.label8.TabIndex = 15;
             this.label8.Text = "Mother Serial Number";
             // 
-            // btnSaveBird
-            // 
-            this.btnSaveBird.Location = new System.Drawing.Point(106, 564);
-            this.btnSaveBird.Name = "btnSaveBird";
-            this.btnSaveBird.Size = new System.Drawing.Size(123, 57);
-            this.btnSaveBird.TabIndex = 16;
-            this.btnSaveBird.Text = "Add Bird";
-            this.btnSaveBird.UseVisualStyleBackColor = true;
-            this.btnSaveBird.Click += new System.EventHandler(this.btnSaveBird_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -279,26 +272,6 @@ namespace ProjectBirdsz
             this.MotherSerialNumber.MinimumWidth = 10;
             this.MotherSerialNumber.Name = "MotherSerialNumber";
             this.MotherSerialNumber.Width = 130;
-            // 
-            // AllBirdsBtn
-            // 
-            this.AllBirdsBtn.Location = new System.Drawing.Point(868, 514);
-            this.AllBirdsBtn.Name = "AllBirdsBtn";
-            this.AllBirdsBtn.Size = new System.Drawing.Size(97, 37);
-            this.AllBirdsBtn.TabIndex = 18;
-            this.AllBirdsBtn.Text = "Show Birds";
-            this.AllBirdsBtn.UseVisualStyleBackColor = true;
-            this.AllBirdsBtn.Click += new System.EventHandler(this.AllBirdsBtn_Click);
-            // 
-            // EditBirdBtn
-            // 
-            this.EditBirdBtn.Location = new System.Drawing.Point(266, 564);
-            this.EditBirdBtn.Name = "EditBirdBtn";
-            this.EditBirdBtn.Size = new System.Drawing.Size(131, 57);
-            this.EditBirdBtn.TabIndex = 19;
-            this.EditBirdBtn.Text = "Save Changes";
-            this.EditBirdBtn.UseVisualStyleBackColor = true;
-            this.EditBirdBtn.Click += new System.EventHandler(this.EditBirdBtn_Click);
             // 
             // AddBirdLabel
             // 
@@ -410,12 +383,51 @@ namespace ProjectBirdsz
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(845, 494);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 31;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(280, 553);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 32;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(114, 553);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(120, 68);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 33;
+            this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
+            // 
             // AddBirdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1090, 648);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.ClearBtn);
             this.Controls.Add(this.DateOfBirth);
@@ -425,10 +437,7 @@ namespace ProjectBirdsz
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.AddBirdLabel);
-            this.Controls.Add(this.EditBirdBtn);
-            this.Controls.Add(this.AllBirdsBtn);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.btnSaveBird);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -447,6 +456,9 @@ namespace ProjectBirdsz
             this.Text = "AddBirdForm";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -466,10 +478,7 @@ namespace ProjectBirdsz
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button btnSaveBird;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button AllBirdsBtn;
-        private System.Windows.Forms.Button EditBirdBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn SerialBirds;
         private System.Windows.Forms.DataGridViewTextBoxColumn StrainBird;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubSpecies;
@@ -487,5 +496,8 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DateTimePicker DateOfBirth;
         private System.Windows.Forms.Button ClearBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
     }
 }

@@ -44,28 +44,7 @@ namespace ProjectBirdsz
             ReleaseObject(excelApp);
         }
 
-        private void btnSignIn_Click_1(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            // Check user existence in Excel
-            bool userExists = CheckUserExistence(username, password);
-
-            if (userExists)
-            {
-                MessageBox.Show("Sign in successful!");
-                // Perform any additional actions for successful sign-in
-                MainMenuForm obj = new MainMenuForm();
-                this.Hide();
-                obj.Show();
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.");
-            }
-        }
+       
 
 
         private bool CheckUserExistence(string username, string password)
@@ -119,16 +98,42 @@ namespace ProjectBirdsz
             }
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            RegisterForm obj = new RegisterForm();
-            this.Hide();
-            obj.Show();
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+
+            // Check user existence in Excel
+            bool userExists = CheckUserExistence(username, password);
+
+            if (userExists)
+            {
+                MessageBox.Show("Sign in successful!");
+                // Perform any additional actions for successful sign-in
+                MainMenuForm obj = new MainMenuForm();
+                this.Hide();
+                obj.Show();
+
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password. Please try again.");
+            }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
+            RegisterForm obj = new RegisterForm();
+            this.Hide();
+            obj.Show();
         }
     }
 }

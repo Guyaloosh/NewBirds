@@ -18,29 +18,7 @@ namespace ProjectBirdsz
 
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
-        {
-            bool success = false;
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-            string Id = IdTextBox.Text;
-
-            if (IsUsernameLegal(username) && (IsPasswordValid(password)) && (IsIdValid(Id)))
-            {
-                 success = SaveUserToExcel(username,password,Id);
-            }
-            // Save user to Excel
-
-            if (success)
-            {
-                MessageBox.Show("Registration successful!");
-                // Perform any additional actions for successful registration
-            }
-            else
-            {
-                MessageBox.Show("Error occurred during registration. Please try again.");
-            }
-        }
+        
 
         private bool SaveUserToExcel(string username, string password,string Id)
         {
@@ -161,6 +139,31 @@ namespace ProjectBirdsz
             SignInForm obj = new SignInForm();
             this.Hide();
             obj.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            bool success = false;
+            string username = txtUsername.Text;
+            string password = txtPassword.Text;
+            string Id = IdTextBox.Text;
+
+            if (IsUsernameLegal(username) && (IsPasswordValid(password)) && (IsIdValid(Id)))
+            {
+                success = SaveUserToExcel(username, password, Id);
+            }
+            // Save user to Excel
+
+            if (success)
+            {
+                MessageBox.Show("Registration successful!");
+                // Perform any additional actions for successful registration
+            }
+            else
+            {
+                MessageBox.Show("Error occurred during registration. Please try again.");
+            }
         }
     }
 }

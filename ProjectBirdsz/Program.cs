@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProjectBirdsz
@@ -16,7 +13,7 @@ namespace ProjectBirdsz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddBirdForm());
+            Application.Run(new StartForm());
         }
     }
 }

@@ -114,32 +114,7 @@ namespace ProjectBirdsz
                 return false;
             return true;
         }
-        private void btnSaveCage_Click(object sender, EventArgs e)
-        {
-            bool success = false;
-            string CageNumber = txtCageNumber.Text;
-            string CageLength = txtlength.Text;
-            string CageHeight = txtheight.Text;
-            string CageWitdh = txtwidth.Text;
-            string CageMaterial = MaterialComboBox.Text;
-
-            if (CageSiral(CageNumber)&& CageMaterial!="" && CheckOnlyNumber(CageLength) && CheckOnlyNumber(CageHeight) && CheckOnlyNumber(CageWitdh))
-                success = SaveCageToExcel(CageNumber, CageLength, CageHeight, CageWitdh, CageMaterial);
- 
-            if (success)
-            {
-                MessageBox.Show("Registration successful!");
-                // Perform any additional actions for successful registration
-                dataGridView.Rows.Clear();
-                LoadCagesFromExcel();
-                ClearInputFields();
-            }
-            else
-            {
-                MessageBox.Show("Error occurred during registration. Please try again.");
-            }
-        }
-
+       
         private bool SaveCageToExcel(string CageNumber, string CageLength, string CageHeight, string CageWitdh, string CageMaterial)
         {
             Excel.Application excelApp = new Excel.Application();
@@ -245,7 +220,27 @@ namespace ProjectBirdsz
             LoadCagesFromExcel();
         }
 
-        private void EditCageBtn_Click(object sender, EventArgs e)
+
+        private void MaterialComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MaterialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            MainMenuForm obj = new MainMenuForm();
+            this.Hide();
+            obj.Show();
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            dataGridView.Rows.Clear();
+            LoadCagesFromExcel();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
             if (dataGridView.SelectedRows.Count == 1)
@@ -258,7 +253,7 @@ namespace ProjectBirdsz
                 selectedRow.Cells[2].Value = txtheight.Text;
                 selectedRow.Cells[3].Value = txtwidth.Text;
                 selectedRow.Cells[4].Value = MaterialComboBox.Text;
-                
+
 
                 // Save the changes back to the Excel file
                 SaveChangesToExcel();
@@ -271,24 +266,31 @@ namespace ProjectBirdsz
             }
         }
 
-        private void AllCagesBtn_Click(object sender, EventArgs e)
+        private void pictureBox4_Click(object sender, EventArgs e)
         {
 
-            dataGridView.Rows.Clear();
-            LoadCagesFromExcel();
+            bool success = false;
+            string CageNumber = txtCageNumber.Text;
+            string CageLength = txtlength.Text;
+            string CageHeight = txtheight.Text;
+            string CageWitdh = txtwidth.Text;
+            string CageMaterial = MaterialComboBox.Text;
 
-        }
+            if (CageSiral(CageNumber) && CageMaterial != "" && CheckOnlyNumber(CageLength) && CheckOnlyNumber(CageHeight) && CheckOnlyNumber(CageWitdh))
+                success = SaveCageToExcel(CageNumber, CageLength, CageHeight, CageWitdh, CageMaterial);
 
-        private void MaterialComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            MaterialComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            MainMenuForm obj = new MainMenuForm();
-            this.Hide();
-            obj.Show();
+            if (success)
+            {
+                MessageBox.Show("Registration successful!");
+                // Perform any additional actions for successful registration
+                dataGridView.Rows.Clear();
+                LoadCagesFromExcel();
+                ClearInputFields();
+            }
+            else
+            {
+                MessageBox.Show("Error occurred during registration. Please try again.");
+            }
         }
     }
 }
