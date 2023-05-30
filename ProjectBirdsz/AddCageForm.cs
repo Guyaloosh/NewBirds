@@ -158,6 +158,13 @@ namespace ProjectBirdsz
             range.Cells[nextRow, 4].Value = CageWitdh;
             range.Cells[nextRow, 5].Value = CageMaterial;
 
+
+            Excel.Range sortRange = worksheet.Range["A2:H" + nextRow];
+            sortRange.Sort(sortRange.Columns[1], Excel.XlSortOrder.xlAscending, Type.Missing, Type.Missing, Excel.XlSortOrder.xlAscending,
+                Type.Missing, Excel.XlSortOrder.xlAscending, Excel.XlYesNoGuess.xlNo, Type.Missing, Type.Missing, Excel.XlSortOrientation.xlSortColumns,
+                Excel.XlSortMethod.xlPinYin, Excel.XlSortDataOption.xlSortNormal, Excel.XlSortDataOption.xlSortNormal,
+                Excel.XlSortDataOption.xlSortNormal);
+
             // Save the workbook
             workbook.Save();
 
