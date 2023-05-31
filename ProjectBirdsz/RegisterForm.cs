@@ -142,6 +142,11 @@ namespace ProjectBirdsz
 
         }
 
+        private string convertToLowerCase(string username)
+        {
+            return username.ToLower();
+        }
+
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
@@ -160,7 +165,7 @@ namespace ProjectBirdsz
 
             if (IsUsernameLegal(username) && (IsPasswordValid(password)) && (IsIdValid(Id)))
             {
-                success = SaveUserToExcel(username, password, Id);
+                success = SaveUserToExcel(convertToLowerCase(username), password, Id);
             }
             // Save user to Excel
 

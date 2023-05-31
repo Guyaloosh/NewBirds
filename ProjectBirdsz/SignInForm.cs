@@ -104,6 +104,11 @@ namespace ProjectBirdsz
             Application.Exit();
         }
 
+        private string convertToLowerCase(string username)
+        {
+            return username.ToLower();
+        }
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
 
@@ -111,7 +116,7 @@ namespace ProjectBirdsz
             string password = txtPassword.Text;
 
             // Check user existence in Excel
-            bool userExists = CheckUserExistence(username, password);
+            bool userExists = CheckUserExistence(convertToLowerCase(username), password);
 
             if (userExists)
             {
