@@ -18,14 +18,30 @@ namespace ProjectBirdsz
 
         }
 
-        
 
-        private bool SaveUserToExcel(string username, string password,string Id)
+
+        private bool SaveUserToExcel(string username, string password, string Id)
         {
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
             Excel.Worksheet worksheet = workbook.Sheets[1];
             Excel.Range range = worksheet.UsedRange;
+
+            // Check if username already exists
+            for (int row = 2; row <= range.Rows.Count; row++)
+            {
+                string existingUsername = Convert.ToString(range.Cells[row, 1].Value);
+                if (existingUsername == username)
+                {
+                    MessageBox.Show("Username already exists.");
+                    workbook.Close();
+                    excelApp.Quit();
+                    ReleaseObject(worksheet);
+                    ReleaseObject(workbook);
+                    ReleaseObject(excelApp);
+                    return false;
+                }
+            }
 
             // Find the next available row in Excel
             int nextRow = range.Rows.Count + 1;
@@ -47,6 +63,7 @@ namespace ProjectBirdsz
 
             return true;
         }
+
 
         // Helper method to release COM objects
         private void ReleaseObject(object obj)
@@ -73,7 +90,7 @@ namespace ProjectBirdsz
         {
             // Check if the username length is between 6 and 8 characters
             if (username.Length < 6 || username.Length > 8)
-            {
+            { 
                 MessageBox.Show("username length is between 6 and 8 characters.");
                 return false;
             }
