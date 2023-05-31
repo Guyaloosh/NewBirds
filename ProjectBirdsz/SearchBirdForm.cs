@@ -64,7 +64,7 @@ namespace ProjectBirdsz
                 DataView dataView = new DataView(dataTable);
 
                 // Apply the filters based on the provided search 
-                string filterExpression = $"SerialNumber = '{serialNumber}' OR SubSpecies = '{subSpecies}' OR Strain = '{strain}' OR DateOfBird = '{dateOfBirth}' OR CageNumber = '{CageNUmber}'";
+                string filterExpression = $"SerialNumber LIKE '%{serialNumber}%' AND SubSpecies LIKE '%{subSpecies}%' AND Strain LIKE '%{strain}%' AND DateOfBird LIKE '%{dateOfBirth}%' AND CageNumber LIKE '%{CageNUmber}%'";
                 dataView.RowFilter = filterExpression;
 
                 // Check if any birds match the search 
