@@ -13,7 +13,7 @@ namespace ProjectBirdsz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SearchBirdForm());
+            Application.Run(new StartForm());
         }
     }
 }

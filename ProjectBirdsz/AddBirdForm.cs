@@ -309,7 +309,7 @@ namespace ProjectBirdsz
                 // Clear the other text box values
                 ClearInputFieldsForChick();
 
-                MessageBox.Show("Add Chick " + (e.RowIndex + 1));
+                MessageBox.Show("Add Chick ");
             }
         }
 
@@ -477,7 +477,7 @@ namespace ProjectBirdsz
 
                 // Update the values in the DataGridView row with the values from the text boxes
                 selectedRow.Cells[0].Value = txtSerialBirds.Text;
-                selectedRow.Cells[1].Value = BirdKind;
+                selectedRow.Cells[1].Value = comboBox1.Text;
                 selectedRow.Cells[2].Value = comboBox2.Text;
                 selectedRow.Cells[3].Value = birdDate;
                 selectedRow.Cells[4].Value = Gender1;
@@ -503,7 +503,7 @@ namespace ProjectBirdsz
             birdDate = selectedDate.ToString("yyyy-MM-dd");
             bool success = false;
             string SerialNumber = txtSerialBirds.Text;
-            string Strain = BirdKind;
+            string Strain = comboBox1.Text;
             string SubSpecies = comboBox2.Text;
             string Gender = Gender1;
             string CageNumber = txtCageNumber.Text;

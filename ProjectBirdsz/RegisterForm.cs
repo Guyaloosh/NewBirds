@@ -119,11 +119,20 @@ namespace ProjectBirdsz
         }
 
         private bool IsIdValid(string Id)
-        { 
-            if (Id.Length != 9) { return false; }
+        {
+            int len = Id.Length;
+            //checking len of Id
+            if (len != 9) 
+            {
+                return false; 
+            }
+            //confirm that  Id contains only digits 
             foreach(char c in Id)
             {
-                if (!char.IsDigit(c)) { return false; }
+                if (!char.IsDigit(c)) 
+                { 
+                    return false;
+                }
             }
             return true;
         }
