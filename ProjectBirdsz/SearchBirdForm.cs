@@ -23,22 +23,7 @@ namespace ProjectBirdsz
             dataGridView.Refresh();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            dataTable.Clear();
-            dataTable.Columns.Clear();
-            dataGridView.Refresh();
-
-
-            string serialNumber = txtSerialNumber.Text.Trim();
-            string subSpecies = txtSubSpecies.Text.Trim();
-            string strain = txtStrain.Text.Trim();
-            string dateOfBirth = txtdateOfBirth.Text.Trim();
-            string CageNUmber = txtCageNumber.Text.Trim();
-
-            // Call the method to perform the search
-            SearchBird(serialNumber, subSpecies, strain, dateOfBirth,CageNUmber);
-        }
+       
 
         private void SearchBird(string serialNumber, string subSpecies, string strain, string dateOfBirth,string CageNUmber)
         {
@@ -155,22 +140,38 @@ namespace ProjectBirdsz
                 MessageBox.Show("An error occurred while converting range to DataTable: " + ex.Message);
             }
         }
-  
-
-        private void btnClean_Click(object sender, EventArgs e)
-        {
-
-            dataGridView.DataSource = null;
-            dataGridView.Rows.Clear();
-            dataGridView.Columns.Clear();
-           
-        }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             MainMenuForm obj = new MainMenuForm();
             this.Hide();
             obj.Show();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            dataTable.Clear();
+            dataTable.Columns.Clear();
+            dataGridView.Refresh();
+
+
+            string serialNumber = txtSerialNumber.Text.Trim();
+            string subSpecies = txtSubSpecies.Text.Trim();
+            string strain = txtStrain.Text.Trim();
+            string dateOfBirth = txtdateOfBirth.Text.Trim();
+            string CageNUmber = txtCageNumber.Text.Trim();
+
+            // Call the method to perform the search
+            SearchBird(serialNumber, subSpecies, strain, dateOfBirth, CageNUmber);
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            dataGridView.DataSource = null;
+            dataGridView.Rows.Clear();
+            dataGridView.Columns.Clear();
+
         }
     }
 }

@@ -70,24 +70,24 @@ namespace ProjectBirdsz
                     if(storedPassword == password)
                     {
                         passwordinv = true;
-                        vialdLogin = true;
+                        vialdLogin = true;      
                     }
-                    break;
+    
                 }
                 if (storedUsername != username && storedPassword == password)
                 {
                     passwordinv = true;
                     userinv = true;
-                    break;
                 }
             }
             string msg = "Error ";
-            if (userExists == false) { msg += ", user not found"; }
-            if (userinv == true) { msg += ", username inviald"; }
+            if (userExists == false && passwordinv == false) { msg += ", user not found"; }
+            if (userinv == true && passwordinv == true) { msg += ", username inviald"; }
             if (passwordinv == false) { msg += ", password inviald"; }
 
             if (vialdLogin == false)
                 MessageBox.Show(msg);
+            
             // Clean up Excel objects
             workbook.Close();
             excelApp.Quit();
@@ -130,13 +130,11 @@ namespace ProjectBirdsz
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
             // Check user existence in Excel
             bool Auth = CheckUserAuth(convertToLowerCase(username), password);
-
             if (Auth)
             {
                 MessageBox.Show("Sign in successful!");
@@ -149,7 +147,6 @@ namespace ProjectBirdsz
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-
             RegisterForm obj = new RegisterForm();
             this.Hide();
             obj.Show();

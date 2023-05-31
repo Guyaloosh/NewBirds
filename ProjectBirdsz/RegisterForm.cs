@@ -74,6 +74,7 @@ namespace ProjectBirdsz
             // Check if the username length is between 6 and 8 characters
             if (username.Length < 6 || username.Length > 8)
             {
+                MessageBox.Show("username length is between 6 and 8 characters.");
                 return false;
             }
 
@@ -88,13 +89,15 @@ namespace ProjectBirdsz
                     // Check if the digit count exceeds 2
                     if (digitCount > 2)
                     {
+                        MessageBox.Show("User name cannot contain more then 2 digits.");
                         return false;
-                        
+
                     }
                 }
                 // Check if the character is not a letter
                 else if (!char.IsLetter(c))
                 {
+                    MessageBox.Show("User name most contain only numbers or letters.");
                     return false;
                 }
             }
@@ -108,6 +111,7 @@ namespace ProjectBirdsz
             // Check if the password length is between 8 and 10 characters
             if (password.Length < 8 || password.Length > 10)
             {
+                MessageBox.Show("Please enter password between 8 to 10 characters");
                 return false;
             }
 
@@ -115,6 +119,7 @@ namespace ProjectBirdsz
             bool hasLetter = password.Any(char.IsLetter);
             bool hasDigit = password.Any(char.IsDigit);
             bool hasSpecialChar = password.Any(c => !char.IsLetterOrDigit(c));
+            if(!(hasLetter && hasDigit && hasSpecialChar)) { MessageBox.Show("Password most contain at least 1 letter, 1 digit and 1 special character "); }
 
             return hasLetter && hasDigit && hasSpecialChar;
         }
@@ -131,7 +136,8 @@ namespace ProjectBirdsz
             foreach(char c in Id)
             {
                 if (!char.IsDigit(c)) 
-                { 
+                {
+                    MessageBox.Show("Invaild id");
                     return false;
                 }
             }
@@ -177,10 +183,6 @@ namespace ProjectBirdsz
                 this.Hide();
                 obj.Show();
               
-            }
-            else
-            {
-                MessageBox.Show("Error occurred during registration. Please try again.");
             }
         }
     }

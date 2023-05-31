@@ -63,7 +63,7 @@ namespace ProjectBirdsz
             // dataGridViewCages
             // 
             this.dataGridViewCages.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewCages.Location = new System.Drawing.Point(435, 139);
+            this.dataGridViewCages.Location = new System.Drawing.Point(426, 138);
             this.dataGridViewCages.Name = "dataGridViewCages";
             this.dataGridViewCages.RowHeadersWidth = 82;
             this.dataGridViewCages.Size = new System.Drawing.Size(375, 114);
@@ -85,11 +85,11 @@ namespace ProjectBirdsz
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label1.Location = new System.Drawing.Point(30, 150);
+            this.label1.Location = new System.Drawing.Point(77, 152);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(177, 22);
+            this.label1.Size = new System.Drawing.Size(130, 22);
             this.label1.TabIndex = 18;
-            this.label1.Text = "Serial Number cage";
+            this.label1.Text = "Serial Number";
             // 
             // txtMaterial
             // 
@@ -110,7 +110,7 @@ namespace ProjectBirdsz
             // dataGridViewBirds
             // 
             this.dataGridViewBirds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewBirds.Location = new System.Drawing.Point(435, 318);
+            this.dataGridViewBirds.Location = new System.Drawing.Point(426, 298);
             this.dataGridViewBirds.Name = "dataGridViewBirds";
             this.dataGridViewBirds.RowHeadersWidth = 82;
             this.dataGridViewBirds.Size = new System.Drawing.Size(375, 114);
@@ -121,7 +121,7 @@ namespace ProjectBirdsz
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label3.Location = new System.Drawing.Point(367, 114);
+            this.label3.Location = new System.Drawing.Point(563, 101);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 22);
             this.label3.TabIndex = 27;
@@ -132,7 +132,7 @@ namespace ProjectBirdsz
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
-            this.label4.Location = new System.Drawing.Point(263, 299);
+            this.label4.Location = new System.Drawing.Point(510, 273);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(166, 22);
             this.label4.TabIndex = 28;
@@ -154,7 +154,7 @@ namespace ProjectBirdsz
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(677, 259);
+            this.pictureBox3.Location = new System.Drawing.Point(668, 258);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(133, 38);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -166,9 +166,9 @@ namespace ProjectBirdsz
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(82, 347);
+            this.pictureBox2.Location = new System.Drawing.Point(219, 229);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(162, 72);
+            this.pictureBox2.Size = new System.Drawing.Size(149, 49);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 34;
             this.pictureBox2.TabStop = false;
