@@ -61,30 +61,34 @@ namespace ProjectBirdsz
             // 
             // txtCageNumber
             // 
+            this.txtCageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtCageNumber.Location = new System.Drawing.Point(181, 162);
             this.txtCageNumber.Name = "txtCageNumber";
-            this.txtCageNumber.Size = new System.Drawing.Size(100, 20);
+            this.txtCageNumber.Size = new System.Drawing.Size(100, 22);
             this.txtCageNumber.TabIndex = 0;
             // 
             // txtlength
             // 
+            this.txtlength.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtlength.Location = new System.Drawing.Point(181, 205);
             this.txtlength.Name = "txtlength";
-            this.txtlength.Size = new System.Drawing.Size(100, 20);
+            this.txtlength.Size = new System.Drawing.Size(100, 22);
             this.txtlength.TabIndex = 1;
             // 
             // txtheight
             // 
+            this.txtheight.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtheight.Location = new System.Drawing.Point(181, 249);
             this.txtheight.Name = "txtheight";
-            this.txtheight.Size = new System.Drawing.Size(100, 20);
+            this.txtheight.Size = new System.Drawing.Size(100, 22);
             this.txtheight.TabIndex = 2;
             // 
             // txtwidth
             // 
+            this.txtwidth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtwidth.Location = new System.Drawing.Point(181, 297);
             this.txtwidth.Name = "txtwidth";
-            this.txtwidth.Size = new System.Drawing.Size(100, 20);
+            this.txtwidth.Size = new System.Drawing.Size(100, 22);
             this.txtwidth.TabIndex = 3;
             // 
             // label1
@@ -225,6 +229,7 @@ namespace ProjectBirdsz
             // MaterialComboBox
             // 
             this.MaterialComboBox.AllowDrop = true;
+            this.MaterialComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.MaterialComboBox.ForeColor = System.Drawing.SystemColors.WindowText;
             this.MaterialComboBox.FormattingEnabled = true;
             this.MaterialComboBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
@@ -235,7 +240,7 @@ namespace ProjectBirdsz
             this.MaterialComboBox.Location = new System.Drawing.Point(181, 342);
             this.MaterialComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.MaterialComboBox.Name = "MaterialComboBox";
-            this.MaterialComboBox.Size = new System.Drawing.Size(100, 21);
+            this.MaterialComboBox.Size = new System.Drawing.Size(100, 24);
             this.MaterialComboBox.TabIndex = 24;
             this.MaterialComboBox.SelectedIndexChanged += new System.EventHandler(this.MaterialComboBox_SelectedIndexChanged);
             // 

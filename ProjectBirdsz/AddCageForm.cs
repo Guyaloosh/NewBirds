@@ -134,14 +134,13 @@ namespace ProjectBirdsz
                 return false;
             return true&&flag;
         }
-       
+
         private bool SaveCageToExcel(string CageNumber, string CageLength, string CageHeight, string CageWitdh, string CageMaterial)
         {
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
             Excel.Worksheet worksheet = workbook.Sheets[1];
             Excel.Range range = worksheet.UsedRange;
-
 
             // Find the next available row in Excel
             int nextRow = range.Rows.Count + 1;
@@ -153,12 +152,18 @@ namespace ProjectBirdsz
             range.Cells[nextRow, 4].Value = CageWitdh;
             range.Cells[nextRow, 5].Value = CageMaterial;
 
+            // Get the updated range after adding new data
+            range = worksheet.UsedRange;
 
-            Excel.Range sortRange = worksheet.Range["A2:H" + nextRow];
-            sortRange.Sort(sortRange.Columns[1], Excel.XlSortOrder.xlAscending, Type.Missing, Type.Missing, Excel.XlSortOrder.xlAscending,
-                Type.Missing, Excel.XlSortOrder.xlAscending, Excel.XlYesNoGuess.xlNo, Type.Missing, Type.Missing, Excel.XlSortOrientation.xlSortColumns,
-                Excel.XlSortMethod.xlPinYin, Excel.XlSortDataOption.xlSortNormal, Excel.XlSortDataOption.xlSortNormal,
-                Excel.XlSortDataOption.xlSortNormal);
+            // Perform sorting
+            Excel.Range sortRange = worksheet.Range["A2:E" + range.Rows.Count];
+            sortRange.Sort(sortRange.Columns[1], Excel.XlSortOrder.xlAscending,
+                           Type.Missing, Type.Missing, Excel.XlSortOrder.xlAscending,
+                           Type.Missing, Excel.XlSortOrder.xlAscending,
+                           Excel.XlYesNoGuess.xlNo, Type.Missing, Type.Missing,
+                           Excel.XlSortOrientation.xlSortColumns,
+                           Excel.XlSortMethod.xlPinYin, Excel.XlSortDataOption.xlSortNormal,
+                           Excel.XlSortDataOption.xlSortNormal, Excel.XlSortDataOption.xlSortNormal);
 
             // Save the workbook
             workbook.Save();
@@ -172,6 +177,7 @@ namespace ProjectBirdsz
 
             return true;
         }
+
 
         private void ClearInputFields()
         {

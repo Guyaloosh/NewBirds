@@ -72,31 +72,35 @@ namespace ProjectBirdsz
             // 
             // txtSerialBirds
             // 
+            this.txtSerialBirds.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtSerialBirds.Location = new System.Drawing.Point(235, 186);
             this.txtSerialBirds.Name = "txtSerialBirds";
-            this.txtSerialBirds.Size = new System.Drawing.Size(144, 20);
+            this.txtSerialBirds.Size = new System.Drawing.Size(144, 22);
             this.txtSerialBirds.TabIndex = 0;
             this.txtSerialBirds.TextChanged += new System.EventHandler(this.txtSerialBirds_TextChanged);
             // 
             // txtCageNumber
             // 
+            this.txtCageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtCageNumber.Location = new System.Drawing.Point(235, 394);
             this.txtCageNumber.Name = "txtCageNumber";
-            this.txtCageNumber.Size = new System.Drawing.Size(144, 20);
+            this.txtCageNumber.Size = new System.Drawing.Size(144, 22);
             this.txtCageNumber.TabIndex = 5;
             // 
             // txtMotherSerialNumber
             // 
+            this.txtMotherSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtMotherSerialNumber.Location = new System.Drawing.Point(235, 471);
             this.txtMotherSerialNumber.Name = "txtMotherSerialNumber";
-            this.txtMotherSerialNumber.Size = new System.Drawing.Size(144, 20);
+            this.txtMotherSerialNumber.Size = new System.Drawing.Size(144, 22);
             this.txtMotherSerialNumber.TabIndex = 7;
             // 
             // txtFatherSerialNumber
             // 
+            this.txtFatherSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtFatherSerialNumber.Location = new System.Drawing.Point(235, 429);
             this.txtFatherSerialNumber.Name = "txtFatherSerialNumber";
-            this.txtFatherSerialNumber.Size = new System.Drawing.Size(144, 20);
+            this.txtFatherSerialNumber.Size = new System.Drawing.Size(144, 22);
             this.txtFatherSerialNumber.TabIndex = 6;
             // 
             // label1

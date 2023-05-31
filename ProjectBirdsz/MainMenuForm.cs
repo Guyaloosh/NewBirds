@@ -45,5 +45,13 @@ namespace ProjectBirdsz
             this.Hide();
             obj.Show();
         }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            SignInForm obj = new SignInForm();
+            this.Hide();
+            obj.Show();
+
+        }
     }
 }

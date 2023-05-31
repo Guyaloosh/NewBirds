@@ -89,6 +89,7 @@ namespace ProjectBirdsz
                     if (digitCount > 2)
                     {
                         return false;
+                        
                     }
                 }
                 // Check if the character is not a letter

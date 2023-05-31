@@ -47,7 +47,7 @@ namespace ProjectBirdsz
        
 
 
-        private bool CheckUserExistence(string username, string password)
+        private bool CheckUserAuth(string username, string password)
         {
             Excel.Application excelApp = new Excel.Application();
             Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
@@ -55,20 +55,39 @@ namespace ProjectBirdsz
             Excel.Range range = worksheet.UsedRange;
 
             bool userExists = false;
-
+            bool passwordinv = false;
+            bool userinv = false;
+            bool vialdLogin = false;
             // Iterate over the Excel rows to check for a matching username and password
             for (int row = 2; row <= range.Rows.Count; row++)
             {
                 string storedUsername = range.Cells[row, 1].Value?.ToString();
                 string storedPassword = range.Cells[row, 2].Value?.ToString();
 
-                if (storedUsername == username && storedPassword == password)
+                if (storedUsername == username )
                 {
-                    userExists = true;
+                    userExists = true;  
+                    if(storedPassword == password)
+                    {
+                        passwordinv = true;
+                        vialdLogin = true;
+                    }
+                    break;
+                }
+                if (storedUsername != username && storedPassword == password)
+                {
+                    passwordinv = true;
+                    userinv = true;
                     break;
                 }
             }
+            string msg = "Error ";
+            if (userExists == false) { msg += ", user not found"; }
+            if (userinv == true) { msg += ", username inviald"; }
+            if (passwordinv == false) { msg += ", password inviald"; }
 
+            if (vialdLogin == false)
+                MessageBox.Show(msg);
             // Clean up Excel objects
             workbook.Close();
             excelApp.Quit();
@@ -76,7 +95,7 @@ namespace ProjectBirdsz
             ReleaseObject(workbook);
             ReleaseObject(excelApp);
 
-            return userExists;
+            return vialdLogin;
         }
 
         // Helper method to release COM objects
@@ -116,20 +135,15 @@ namespace ProjectBirdsz
             string password = txtPassword.Text;
 
             // Check user existence in Excel
-            bool userExists = CheckUserExistence(convertToLowerCase(username), password);
+            bool Auth = CheckUserAuth(convertToLowerCase(username), password);
 
-            if (userExists)
+            if (Auth)
             {
                 MessageBox.Show("Sign in successful!");
                 // Perform any additional actions for successful sign-in
                 MainMenuForm obj = new MainMenuForm();
                 this.Hide();
                 obj.Show();
-
-            }
-            else
-            {
-                MessageBox.Show("Invalid username or password. Please try again.");
             }
         }
 

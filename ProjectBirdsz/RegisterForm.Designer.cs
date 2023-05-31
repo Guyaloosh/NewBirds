@@ -48,6 +48,7 @@ namespace ProjectBirdsz
             this.Password.AutoSize = true;
             this.Password.BackColor = System.Drawing.Color.Transparent;
             this.Password.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.Password.ForeColor = System.Drawing.Color.White;
             this.Password.Location = new System.Drawing.Point(347, 207);
             this.Password.Name = "Password";
             this.Password.Size = new System.Drawing.Size(94, 22);
@@ -59,6 +60,7 @@ namespace ProjectBirdsz
             this.UserName.AutoSize = true;
             this.UserName.BackColor = System.Drawing.Color.Transparent;
             this.UserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.UserName.ForeColor = System.Drawing.Color.White;
             this.UserName.Location = new System.Drawing.Point(347, 169);
             this.UserName.Name = "UserName";
             this.UserName.Size = new System.Drawing.Size(105, 22);
@@ -67,24 +69,27 @@ namespace ProjectBirdsz
             // 
             // txtPassword
             // 
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtPassword.Location = new System.Drawing.Point(468, 214);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(166, 20);
+            this.txtPassword.Size = new System.Drawing.Size(166, 22);
             this.txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtUsername.Location = new System.Drawing.Point(468, 169);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(166, 20);
+            this.txtUsername.Size = new System.Drawing.Size(166, 22);
             this.txtUsername.TabIndex = 4;
             this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // IdTextBox
             // 
+            this.IdTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.IdTextBox.Location = new System.Drawing.Point(468, 259);
             this.IdTextBox.Name = "IdTextBox";
-            this.IdTextBox.Size = new System.Drawing.Size(165, 20);
+            this.IdTextBox.Size = new System.Drawing.Size(165, 22);
             this.IdTextBox.TabIndex = 9;
             // 
             // IDuserName
@@ -92,6 +97,7 @@ namespace ProjectBirdsz
             this.IDuserName.AutoSize = true;
             this.IDuserName.BackColor = System.Drawing.Color.Transparent;
             this.IDuserName.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
+            this.IDuserName.ForeColor = System.Drawing.Color.White;
             this.IDuserName.Location = new System.Drawing.Point(384, 259);
             this.IDuserName.Name = "IDuserName";
             this.IDuserName.Size = new System.Drawing.Size(27, 22);
@@ -103,6 +109,7 @@ namespace ProjectBirdsz
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("MV Boli", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Transparent;
             this.label1.Location = new System.Drawing.Point(429, 48);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(183, 41);

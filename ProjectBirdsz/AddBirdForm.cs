@@ -82,8 +82,15 @@ namespace ProjectBirdsz
 
             int rowCount = range.Rows.Count;
             int columnCount = range.Columns.Count;
+            int nextRow = range.Rows.Count + 1;
 
-           
+
+            Excel.Range sortRange = worksheet.Range["A2:H" + nextRow];
+            sortRange.Sort(sortRange.Columns[1], Excel.XlSortOrder.xlAscending, Type.Missing, Type.Missing, Excel.XlSortOrder.xlAscending,
+                Type.Missing, Excel.XlSortOrder.xlAscending, Excel.XlYesNoGuess.xlNo, Type.Missing, Type.Missing, Excel.XlSortOrientation.xlSortColumns,
+                Excel.XlSortMethod.xlPinYin, Excel.XlSortDataOption.xlSortNormal, Excel.XlSortDataOption.xlSortNormal,
+                Excel.XlSortDataOption.xlSortNormal);
+
 
             // Set up the DataGridView columns
             dataGridView.ColumnCount = columnCount;
@@ -107,12 +114,16 @@ namespace ProjectBirdsz
             }
             AddButtonColumn();
             // Clean up Excel objects
-          
+
+            // Save the workbook
+
+            workbook.Save();
             workbook.Close();
             excelApp.Quit();
             ReleaseObject(worksheet);
             ReleaseObject(workbook);
             ReleaseObject(excelApp);
+
         }
 
         bool CheckBirthDay(DateTime BirthDay)
@@ -475,7 +486,34 @@ namespace ProjectBirdsz
             {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
 
+                if (selectedRow.Cells[0].Value.ToString() != txtSerialBirds.Text) {
+                    if (!ValidateSerialNumber(txtSerialBirds.Text))
+                    {
+                        MessageBox.Show("Invalid serial number. Please enter digits only, confirm that bird does not exist");
+                        return;
+                    }
+                }
+
+                if (!ValidateSpecies(comboBox1.Text))
+                {
+                    MessageBox.Show("Invalid strain. Please enter letters only.");
+                    return;
+                }
+
+                if (!ValidateSubspecies(comboBox2.Text))
+                {
+                    MessageBox.Show("Invalid subspecies. Please enter letters only.");
+                    return;
+                }
+
+                if (!ValidateCageNumber(txtCageNumber.Text))
+                {
+                    MessageBox.Show("Invalid Cage Number. Please enter an existing cage number .");
+                    return;
+                }
+
                 // Update the values in the DataGridView row with the values from the text boxes
+
                 selectedRow.Cells[0].Value = txtSerialBirds.Text;
                 selectedRow.Cells[1].Value = comboBox1.Text;
                 selectedRow.Cells[2].Value = comboBox2.Text;
@@ -485,7 +523,7 @@ namespace ProjectBirdsz
                 selectedRow.Cells[6].Value = txtFatherSerialNumber.Text;
                 selectedRow.Cells[7].Value = txtMotherSerialNumber.Text;
 
-                // Save the changes back to the Excel file
+
                 SaveChangesToExcel();
 
                 MessageBox.Show("Changes saved successfully!");

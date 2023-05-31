@@ -51,30 +51,34 @@ namespace ProjectBirdsz
             // 
             // txtSerialNumber
             // 
+            this.txtSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtSerialNumber.Location = new System.Drawing.Point(153, 137);
             this.txtSerialNumber.Name = "txtSerialNumber";
-            this.txtSerialNumber.Size = new System.Drawing.Size(125, 20);
+            this.txtSerialNumber.Size = new System.Drawing.Size(125, 22);
             this.txtSerialNumber.TabIndex = 0;
             // 
             // txtStrain
             // 
+            this.txtStrain.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtStrain.Location = new System.Drawing.Point(153, 183);
             this.txtStrain.Name = "txtStrain";
-            this.txtStrain.Size = new System.Drawing.Size(125, 20);
+            this.txtStrain.Size = new System.Drawing.Size(125, 22);
             this.txtStrain.TabIndex = 1;
             // 
             // txtSubSpecies
             // 
+            this.txtSubSpecies.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtSubSpecies.Location = new System.Drawing.Point(153, 222);
             this.txtSubSpecies.Name = "txtSubSpecies";
-            this.txtSubSpecies.Size = new System.Drawing.Size(125, 20);
+            this.txtSubSpecies.Size = new System.Drawing.Size(125, 22);
             this.txtSubSpecies.TabIndex = 2;
             // 
             // txtdateOfBirth
             // 
+            this.txtdateOfBirth.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtdateOfBirth.Location = new System.Drawing.Point(153, 266);
             this.txtdateOfBirth.Name = "txtdateOfBirth";
-            this.txtdateOfBirth.Size = new System.Drawing.Size(125, 20);
+            this.txtdateOfBirth.Size = new System.Drawing.Size(125, 22);
             this.txtdateOfBirth.TabIndex = 3;
             // 
             // btnSearch
@@ -166,9 +170,10 @@ namespace ProjectBirdsz
             // 
             // txtCageNumber
             // 
+            this.txtCageNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtCageNumber.Location = new System.Drawing.Point(153, 302);
             this.txtCageNumber.Name = "txtCageNumber";
-            this.txtCageNumber.Size = new System.Drawing.Size(125, 20);
+            this.txtCageNumber.Size = new System.Drawing.Size(125, 22);
             this.txtCageNumber.TabIndex = 13;
             // 
             // label6

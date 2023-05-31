@@ -93,16 +93,18 @@ namespace ProjectBirdsz
             // 
             // txtMaterial
             // 
+            this.txtMaterial.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtMaterial.Location = new System.Drawing.Point(229, 191);
             this.txtMaterial.Name = "txtMaterial";
-            this.txtMaterial.Size = new System.Drawing.Size(125, 20);
+            this.txtMaterial.Size = new System.Drawing.Size(125, 22);
             this.txtMaterial.TabIndex = 14;
             // 
             // txtCageSerialNumber
             // 
+            this.txtCageSerialNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(177)));
             this.txtCageSerialNumber.Location = new System.Drawing.Point(229, 152);
             this.txtCageSerialNumber.Name = "txtCageSerialNumber";
-            this.txtCageSerialNumber.Size = new System.Drawing.Size(125, 20);
+            this.txtCageSerialNumber.Size = new System.Drawing.Size(125, 22);
             this.txtCageSerialNumber.TabIndex = 13;
             // 
             // dataGridViewBirds
