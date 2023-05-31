@@ -99,8 +99,11 @@ namespace ProjectBirdsz
         bool CheckOnlyNumber(String Number)
         {
             foreach (char letter in Number)
-                if (!char.IsDigit(letter))
+                if (!char.IsDigit(letter)) 
+                {
+                    MessageBox.Show("Height , witdh and length need to be a positive number  ");
                     return false;
+                }   
             if (Number == "")
                 return false;
             return true;
@@ -117,7 +120,11 @@ namespace ProjectBirdsz
             for (int i = 2; i <= lastRow; i++)
             {
                 Excel.Range CageNumber = worksheet.Cells[i, 1];
-                if (CageNumber.Text == CageS) { flag = false; }
+                if (CageNumber.Text == CageS)
+                { 
+                    flag = false;
+                    MessageBox.Show("Serial alredy exist ");
+                }
             }
 
             // Clean up Excel objects
@@ -141,6 +148,23 @@ namespace ProjectBirdsz
             Excel.Workbook workbook = excelApp.Workbooks.Open(ExcelFilePath);
             Excel.Worksheet worksheet = workbook.Sheets[1];
             Excel.Range range = worksheet.UsedRange;
+
+            // Check if the serial cage number already exists in Excel
+            for (int row = 2; row <= range.Rows.Count; row++)
+            {
+                string existingCageNumber = range.Cells[row, 1].Value?.ToString();
+                if (existingCageNumber == CageNumber)
+                {
+                    // The serial cage number already exists
+                    
+                    workbook.Close();
+                    excelApp.Quit();
+                    ReleaseObject(worksheet);
+                    ReleaseObject(workbook);
+                    ReleaseObject(excelApp);
+                    return false;
+                }
+            }
 
             // Find the next available row in Excel
             int nextRow = range.Rows.Count + 1;
@@ -177,6 +201,7 @@ namespace ProjectBirdsz
 
             return true;
         }
+
 
 
         private void ClearInputFields()
@@ -313,10 +338,7 @@ namespace ProjectBirdsz
                 LoadCagesFromExcel();
                 ClearInputFields();
             }
-            else
-            {
-                MessageBox.Show("Error occurred during registration. Please try again.");
-            }
+           
         }
     }
 }
