@@ -46,12 +46,12 @@ namespace ProjectBirdsz
             this.Width = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Material = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.MaterialComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.AddBirdLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -206,25 +206,13 @@ namespace ProjectBirdsz
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("MV Boli", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("MV Boli", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(495, 34);
+            this.label6.Location = new System.Drawing.Point(415, 44);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(164, 41);
+            this.label6.Size = new System.Drawing.Size(237, 63);
             this.label6.TabIndex = 22;
-            this.label6.Text = "Add Cage";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("MV Boli", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(41, 109);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(115, 28);
-            this.label7.TabIndex = 23;
-            this.label7.Text = "Details : ";
+            this.label6.Text = "My cages";
             // 
             // MaterialComboBox
             // 
@@ -292,6 +280,18 @@ namespace ProjectBirdsz
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // AddBirdLabel
+            // 
+            this.AddBirdLabel.AutoSize = true;
+            this.AddBirdLabel.BackColor = System.Drawing.Color.Transparent;
+            this.AddBirdLabel.Font = new System.Drawing.Font("MV Boli", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AddBirdLabel.ForeColor = System.Drawing.SystemColors.Control;
+            this.AddBirdLabel.Location = new System.Drawing.Point(50, 98);
+            this.AddBirdLabel.Name = "AddBirdLabel";
+            this.AddBirdLabel.Size = new System.Drawing.Size(159, 41);
+            this.AddBirdLabel.TabIndex = 36;
+            this.AddBirdLabel.Text = "Add cage";
+            // 
             // AddCageForm
             // 
             this.AllowDrop = true;
@@ -299,12 +299,12 @@ namespace ProjectBirdsz
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1022, 544);
+            this.Controls.Add(this.AddBirdLabel);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.MaterialComboBox);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label5);
@@ -349,11 +349,11 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DataGridViewTextBoxColumn Width;
         private System.Windows.Forms.DataGridViewTextBoxColumn Material;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.ComboBox MaterialComboBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label AddBirdLabel;
     }
 }

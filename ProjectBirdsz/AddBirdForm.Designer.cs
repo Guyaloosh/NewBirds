@@ -52,7 +52,6 @@ namespace ProjectBirdsz
             this.FatherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MotherSerialNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddBirdLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -63,6 +62,7 @@ namespace ProjectBirdsz
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -283,23 +283,11 @@ namespace ProjectBirdsz
             this.AddBirdLabel.BackColor = System.Drawing.Color.Transparent;
             this.AddBirdLabel.Font = new System.Drawing.Font("MV Boli", 24F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AddBirdLabel.ForeColor = System.Drawing.SystemColors.Control;
-            this.AddBirdLabel.Location = new System.Drawing.Point(501, 34);
+            this.AddBirdLabel.Location = new System.Drawing.Point(12, 122);
             this.AddBirdLabel.Name = "AddBirdLabel";
             this.AddBirdLabel.Size = new System.Drawing.Size(203, 41);
             this.AddBirdLabel.TabIndex = 21;
             this.AddBirdLabel.Text = "Add Bird : ";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("MV Boli", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(109, 122);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 28);
-            this.label2.TabIndex = 22;
-            this.label2.Text = "Details : ";
             // 
             // checkBox1
             // 
@@ -423,6 +411,18 @@ namespace ProjectBirdsz
             this.pictureBox4.TabStop = false;
             this.pictureBox4.Click += new System.EventHandler(this.pictureBox4_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("MV Boli", 36F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(463, 48);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(258, 63);
+            this.label2.TabIndex = 22;
+            this.label2.Text = "My Birds ";
+            // 
             // AddBirdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,7 +492,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.DataGridViewTextBoxColumn FatherSerialNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn MotherSerialNumber;
         private System.Windows.Forms.Label AddBirdLabel;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.CheckBox checkBox2;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -503,5 +502,6 @@ namespace ProjectBirdsz
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label2;
     }
 }
