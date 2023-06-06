@@ -60,6 +60,8 @@ namespace ProjectBirdsz
                 dataGridView.Rows.Add(row);
             }
 
+
+
             // Clean up Excel objects
             workbook.Close();
             excelApp.Quit();
@@ -254,6 +256,19 @@ namespace ProjectBirdsz
                
             }
 
+            // Get the updated range after adding new data
+            range = worksheet.UsedRange;
+
+            // Perform sorting
+            Excel.Range sortRange = worksheet.Range["A2:E" + range.Rows.Count];
+            sortRange.Sort(sortRange.Columns[1], Excel.XlSortOrder.xlAscending,
+                           Type.Missing, Type.Missing, Excel.XlSortOrder.xlAscending,
+                           Type.Missing, Excel.XlSortOrder.xlAscending,
+                           Excel.XlYesNoGuess.xlNo, Type.Missing, Type.Missing,
+                           Excel.XlSortOrientation.xlSortColumns,
+                           Excel.XlSortMethod.xlPinYin, Excel.XlSortDataOption.xlSortNormal,
+                           Excel.XlSortDataOption.xlSortNormal, Excel.XlSortDataOption.xlSortNormal);
+
             // Save the workbook
             workbook.Save();
 
@@ -298,6 +313,23 @@ namespace ProjectBirdsz
             {
                 DataGridViewRow selectedRow = dataGridView.SelectedRows[0];
 
+                if (selectedRow.Cells[0].Value.ToString() != txtCageNumber.Text)
+                {
+                    if (!CageSiral(txtCageNumber.Text))
+                        return;
+                }
+
+                if (!CheckOnlyNumber(txtlength.Text))
+                    return;
+
+
+                if (!CheckOnlyNumber(txtheight.Text))          
+                    return;
+
+                if (!CheckOnlyNumber(txtwidth.Text))     
+                    return;
+                
+
                 // Update the values in the DataGridView row with the values from the text boxes
                 selectedRow.Cells[0].Value = txtCageNumber.Text;
                 selectedRow.Cells[1].Value = txtlength.Text;
@@ -305,11 +337,12 @@ namespace ProjectBirdsz
                 selectedRow.Cells[3].Value = txtwidth.Text;
                 selectedRow.Cells[4].Value = MaterialComboBox.Text;
 
-
                 // Save the changes back to the Excel file
                 SaveChangesToExcel();
 
                 MessageBox.Show("Changes saved successfully!");
+                ClearInputFields();
+                
             }
             else
             {
