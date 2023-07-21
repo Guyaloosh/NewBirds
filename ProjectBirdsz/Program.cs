@@ -13,7 +13,7 @@ namespace ProjectBirdsz
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddCageForm());
+            Application.Run(new StartForm());
         }
     }
 }
